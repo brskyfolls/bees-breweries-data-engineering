@@ -1,0 +1,21 @@
+# Use the official Airflow image as the base
+FROM apache/airflow:2.10.2
+
+# Switch to root user to install Java
+USER root
+
+# Install Java
+RUN apt-get update && \
+    apt-get install -y openjdk-17-jdk && \
+    apt-get clean && \
+    rm -rf /var/lib/apt/lists/*
+
+# Set JAVA_HOME environment variable
+ENV JAVA_HOME=/usr/lib/jvm/java-17-openjdk-amd64
+ENV PATH="${JAVA_HOME}/bin:${PATH}"
+
+# Switch back to the airflow user for further installations
+USER airflow
+
+# Install the required Python packages
+RUN pip install apache-airflow-providers-apache-spark pyspark azure-storage-blob
