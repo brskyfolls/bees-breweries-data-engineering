@@ -1,8 +1,14 @@
 from airflow import DAG
-from airflow.operators.bash import BashOperator
-from datetime import datetime
+from airflow.operators.python_operator import PythonOperator
+from airflow.utils.dates import days_ago
 from airflow.utils.email import send_email
-import os
+
+# Default arguments
+default_args = {
+    'owner': 'airflow',
+    'email_on_failure': False,  # We'll handle failures with a custom callback
+    'retries': 0,
+}
 
 # Define the HTML template globally
 email_template = """
@@ -92,58 +98,30 @@ def failure_callback(context):
 
     # Send email with HTML template
     send_email(
-        to=os.getenv('EMAIL_TO_SEND_ALERT', 'brskyfolls@gmail.com'),
+        to="brskyfolls@gmail.com",
         subject=subject,
         html_content=email_content
     )
 
-# Define default_args for your DAG
-default_args = {
-    'owner': 'airflow',
-    'depends_on_past': False,
-    'start_date': datetime(2024, 11, 9),
-    'retries': 0,
-}
+# Define a sample task that will fail
+def sample_task():
+    raise ValueError("This task is meant to fail for testing purposes")
 
-# Define your DAG
-dag = DAG(
-    'openbrewerydb_dag',  # Name of the DAG
+# Define the DAG
+with DAG(
+    'html_email_template_on_failure',
     default_args=default_args,
-    description='Medallion Architecture of OpenBreweryDB API',
-    schedule_interval=' 0 16 * * *',  # Change to a cron expression or timedelta for scheduling
-)
+    description='DAG to test sending HTML email on task failure',
+    schedule_interval='@once',
+    start_date=days_ago(1),
+    catchup=False,
+) as dag:
 
-# List of layers (bronze, silver, gold)
-layers = ['bronze', 'silver', 'gold']
-
-# Loop through the layers and dynamically create tasks
-spark_submit_tasks = {}
-for layer in layers:
-    task_id = f'spark_submit_{layer}_job'
-    application_path = f'/opt/airflow/dags/scripts/{layer}_layer.py'  # Path to the script for each layer
-    jar_paths = (
-        '/opt/airflow/dags/scripts/jars/hadoop-azure-3.4.1.jar,'
-        '/opt/airflow/dags/scripts/jars/azure-storage-8.6.6.jar,'
-        '/opt/airflow/dags/scripts/jars/jetty-server-9.4.45.v20220203.jar,'
-        '/opt/airflow/dags/scripts/jars/jetty-util-9.4.45.v20220203.jar,'
-        '/opt/airflow/dags/scripts/jars/jetty-util-ajax-9.4.45.v20220203.jar'
-    )
-    
-    # Create the bash command to run spark-submit with your provided command
-    bash_command = f"""
-    spark-submit \
-        --master spark://spark-master:7077 \
-        --jars {jar_paths} \
-        {application_path}
-    """
-    
-    # Use BashOperator to execute the command
-    spark_submit_tasks[layer] = BashOperator(
-        task_id=task_id,
-        bash_command=bash_command,  # Run the exact spark-submit command
-        on_failure_callback=failure_callback,
-        dag=dag,
+    # Task that is intended to fail
+    failing_task = PythonOperator(
+        task_id='failing_task',
+        python_callable=sample_task,
+        on_failure_callback=failure_callback  # Attach the failure callback
     )
 
-# Set dynamic task dependencies: bronze -> silver -> gold
-spark_submit_tasks['bronze'] >> spark_submit_tasks['silver'] >> spark_submit_tasks['gold']
+failing_task

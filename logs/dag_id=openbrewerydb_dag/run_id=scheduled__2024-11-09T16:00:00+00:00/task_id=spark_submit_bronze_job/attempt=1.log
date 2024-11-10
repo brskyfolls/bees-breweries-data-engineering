@@ -1,0 +1,243 @@
+[2024-11-10T17:36:53.098+0000] {local_task_job_runner.py:123} INFO - ::group::Pre task execution logs
+[2024-11-10T17:36:53.110+0000] {taskinstance.py:2612} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: openbrewerydb_dag.spark_submit_bronze_job scheduled__2024-11-09T16:00:00+00:00 [queued]>
+[2024-11-10T17:36:53.118+0000] {taskinstance.py:2612} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: openbrewerydb_dag.spark_submit_bronze_job scheduled__2024-11-09T16:00:00+00:00 [queued]>
+[2024-11-10T17:36:53.118+0000] {taskinstance.py:2865} INFO - Starting attempt 1 of 1
+[2024-11-10T17:36:53.129+0000] {taskinstance.py:2888} INFO - Executing <Task(BashOperator): spark_submit_bronze_job> on 2024-11-09 16:00:00+00:00
+[2024-11-10T17:36:53.134+0000] {warnings.py:112} WARNING - /home/***/.local/lib/python3.12/site-packages/***/task/task_runner/standard_task_runner.py:70: DeprecationWarning: This process (pid=2885) is multi-threaded, use of fork() may lead to deadlocks in the child.
+  pid = os.fork()
+
+[2024-11-10T17:36:53.135+0000] {standard_task_runner.py:72} INFO - Started process 2886 to run task
+[2024-11-10T17:36:53.136+0000] {standard_task_runner.py:104} INFO - Running: ['***', 'tasks', 'run', 'openbrewerydb_dag', 'spark_submit_bronze_job', 'scheduled__2024-11-09T16:00:00+00:00', '--job-id', '82', '--raw', '--subdir', 'DAGS_FOLDER/openbrewerydb_dag.py', '--cfg-path', '/tmp/tmpop9nuwu5']
+[2024-11-10T17:36:53.136+0000] {standard_task_runner.py:105} INFO - Job 82: Subtask spark_submit_bronze_job
+[2024-11-10T17:36:53.179+0000] {task_command.py:467} INFO - Running <TaskInstance: openbrewerydb_dag.spark_submit_bronze_job scheduled__2024-11-09T16:00:00+00:00 [running]> on host 5dee1e87bc96
+[2024-11-10T17:36:53.247+0000] {taskinstance.py:3131} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='***' AIRFLOW_CTX_DAG_ID='openbrewerydb_dag' AIRFLOW_CTX_TASK_ID='spark_submit_bronze_job' AIRFLOW_CTX_EXECUTION_DATE='2024-11-09T16:00:00+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='scheduled__2024-11-09T16:00:00+00:00'
+[2024-11-10T17:36:53.248+0000] {taskinstance.py:731} INFO - ::endgroup::
+[2024-11-10T17:36:53.258+0000] {subprocess.py:63} INFO - Tmp dir root location: /tmp
+[2024-11-10T17:36:53.258+0000] {subprocess.py:75} INFO - Running command: ['/usr/bin/bash', '-c', '\n    spark-submit         --master spark://spark-master:7077         --jars /opt/***/dags/scripts/jars/hadoop-azure-3.4.1.jar,/opt/***/dags/scripts/jars/azure-storage-8.6.6.jar,/opt/***/dags/scripts/jars/jetty-server-9.4.45.v20220203.jar,/opt/***/dags/scripts/jars/jetty-util-9.4.45.v20220203.jar,/opt/***/dags/scripts/jars/jetty-util-ajax-9.4.45.v20220203.jar         /opt/***/dags/scripts/bronze_layer.py\n    ']
+[2024-11-10T17:36:53.272+0000] {subprocess.py:86} INFO - Output:
+[2024-11-10T17:36:54.780+0000] {subprocess.py:93} INFO - 24/11/10 17:36:54 WARN NativeCodeLoader: Unable to load native-hadoop library for your platform... using builtin-java classes where applicable
+[2024-11-10T17:36:56.195+0000] {subprocess.py:93} INFO - 2024-11-10 17:36:56,195 - INFO - Pipeline execution started.
+[2024-11-10T17:36:56.195+0000] {subprocess.py:93} INFO - 2024-11-10 17:36:56,195 - INFO - Initializing Spark session.
+[2024-11-10T17:36:56.243+0000] {subprocess.py:93} INFO - 24/11/10 17:36:56 INFO SparkContext: Running Spark version 3.5.3
+[2024-11-10T17:36:56.244+0000] {subprocess.py:93} INFO - 24/11/10 17:36:56 INFO SparkContext: OS info Linux, 6.10.13-3-MANJARO, amd64
+[2024-11-10T17:36:56.244+0000] {subprocess.py:93} INFO - 24/11/10 17:36:56 INFO SparkContext: Java version 17.0.13
+[2024-11-10T17:36:56.270+0000] {subprocess.py:93} INFO - 24/11/10 17:36:56 INFO ResourceUtils: ==============================================================
+[2024-11-10T17:36:56.270+0000] {subprocess.py:93} INFO - 24/11/10 17:36:56 INFO ResourceUtils: No custom resources configured for spark.driver.
+[2024-11-10T17:36:56.270+0000] {subprocess.py:93} INFO - 24/11/10 17:36:56 INFO ResourceUtils: ==============================================================
+[2024-11-10T17:36:56.271+0000] {subprocess.py:93} INFO - 24/11/10 17:36:56 INFO SparkContext: Submitted application: Brewery Data Pipeline
+[2024-11-10T17:36:56.286+0000] {subprocess.py:93} INFO - 24/11/10 17:36:56 INFO ResourceProfile: Default ResourceProfile created, executor resources: Map(cores -> name: cores, amount: 1, script: , vendor: , memory -> name: memory, amount: 1024, script: , vendor: , offHeap -> name: offHeap, amount: 0, script: , vendor: ), task resources: Map(cpus -> name: cpus, amount: 1.0)
+[2024-11-10T17:36:56.292+0000] {subprocess.py:93} INFO - 24/11/10 17:36:56 INFO ResourceProfile: Limiting resource is cpu
+[2024-11-10T17:36:56.293+0000] {subprocess.py:93} INFO - 24/11/10 17:36:56 INFO ResourceProfileManager: Added ResourceProfile id: 0
+[2024-11-10T17:36:56.342+0000] {subprocess.py:93} INFO - 24/11/10 17:36:56 INFO SecurityManager: Changing view acls to: ***
+[2024-11-10T17:36:56.343+0000] {subprocess.py:93} INFO - 24/11/10 17:36:56 INFO SecurityManager: Changing modify acls to: ***
+[2024-11-10T17:36:56.343+0000] {subprocess.py:93} INFO - 24/11/10 17:36:56 INFO SecurityManager: Changing view acls groups to:
+[2024-11-10T17:36:56.344+0000] {subprocess.py:93} INFO - 24/11/10 17:36:56 INFO SecurityManager: Changing modify acls groups to:
+[2024-11-10T17:36:56.345+0000] {subprocess.py:93} INFO - 24/11/10 17:36:56 INFO SecurityManager: SecurityManager: authentication disabled; ui acls disabled; users with view permissions: ***; groups with view permissions: EMPTY; users with modify permissions: ***; groups with modify permissions: EMPTY
+[2024-11-10T17:36:56.521+0000] {subprocess.py:93} INFO - 24/11/10 17:36:56 INFO Utils: Successfully started service 'sparkDriver' on port 39359.
+[2024-11-10T17:36:56.544+0000] {subprocess.py:93} INFO - 24/11/10 17:36:56 INFO SparkEnv: Registering MapOutputTracker
+[2024-11-10T17:36:56.571+0000] {subprocess.py:93} INFO - 24/11/10 17:36:56 INFO SparkEnv: Registering BlockManagerMaster
+[2024-11-10T17:36:56.585+0000] {subprocess.py:93} INFO - 24/11/10 17:36:56 INFO BlockManagerMasterEndpoint: Using org.apache.spark.storage.DefaultTopologyMapper for getting topology information
+[2024-11-10T17:36:56.586+0000] {subprocess.py:93} INFO - 24/11/10 17:36:56 INFO BlockManagerMasterEndpoint: BlockManagerMasterEndpoint up
+[2024-11-10T17:36:56.590+0000] {subprocess.py:93} INFO - 24/11/10 17:36:56 INFO SparkEnv: Registering BlockManagerMasterHeartbeat
+[2024-11-10T17:36:56.604+0000] {subprocess.py:93} INFO - 24/11/10 17:36:56 INFO DiskBlockManager: Created local directory at /tmp/blockmgr-2e9c1372-5901-4228-99d4-c1c75dca0867
+[2024-11-10T17:36:56.614+0000] {subprocess.py:93} INFO - 24/11/10 17:36:56 INFO MemoryStore: MemoryStore started with capacity 434.4 MiB
+[2024-11-10T17:36:56.658+0000] {subprocess.py:93} INFO - 24/11/10 17:36:56 INFO SparkEnv: Registering OutputCommitCoordinator
+[2024-11-10T17:36:56.742+0000] {subprocess.py:93} INFO - 24/11/10 17:36:56 INFO JettyUtils: Start Jetty 0.0.0.0:4040 for SparkUI
+[2024-11-10T17:36:56.787+0000] {subprocess.py:93} INFO - 24/11/10 17:36:56 INFO Utils: Successfully started service 'SparkUI' on port 4040.
+[2024-11-10T17:36:56.815+0000] {subprocess.py:93} INFO - 24/11/10 17:36:56 INFO SparkContext: Added JAR file:///opt/***/dags/scripts/jars/hadoop-azure-3.4.1.jar at spark://5dee1e87bc96:39359/jars/hadoop-azure-3.4.1.jar with timestamp 1731260216236
+[2024-11-10T17:36:56.815+0000] {subprocess.py:93} INFO - 24/11/10 17:36:56 INFO SparkContext: Added JAR file:///opt/***/dags/scripts/jars/azure-storage-8.6.6.jar at spark://5dee1e87bc96:39359/jars/azure-storage-8.6.6.jar with timestamp 1731260216236
+[2024-11-10T17:36:56.815+0000] {subprocess.py:93} INFO - 24/11/10 17:36:56 INFO SparkContext: Added JAR file:///opt/***/dags/scripts/jars/jetty-server-9.4.45.v20220203.jar at spark://5dee1e87bc96:39359/jars/jetty-server-9.4.45.v20220203.jar with timestamp 1731260216236
+[2024-11-10T17:36:56.815+0000] {subprocess.py:93} INFO - 24/11/10 17:36:56 INFO SparkContext: Added JAR file:///opt/***/dags/scripts/jars/jetty-util-9.4.45.v20220203.jar at spark://5dee1e87bc96:39359/jars/jetty-util-9.4.45.v20220203.jar with timestamp 1731260216236
+[2024-11-10T17:36:56.816+0000] {subprocess.py:93} INFO - 24/11/10 17:36:56 INFO SparkContext: Added JAR file:///opt/***/dags/scripts/jars/jetty-util-ajax-9.4.45.v20220203.jar at spark://5dee1e87bc96:39359/jars/jetty-util-ajax-9.4.45.v20220203.jar with timestamp 1731260216236
+[2024-11-10T17:36:56.859+0000] {subprocess.py:93} INFO - 24/11/10 17:36:56 INFO Executor: Starting executor ID driver on host 5dee1e87bc96
+[2024-11-10T17:36:56.860+0000] {subprocess.py:93} INFO - 24/11/10 17:36:56 INFO Executor: OS info Linux, 6.10.13-3-MANJARO, amd64
+[2024-11-10T17:36:56.860+0000] {subprocess.py:93} INFO - 24/11/10 17:36:56 INFO Executor: Java version 17.0.13
+[2024-11-10T17:36:56.865+0000] {subprocess.py:93} INFO - 24/11/10 17:36:56 INFO Executor: Starting executor with user classpath (userClassPathFirst = false): ''
+[2024-11-10T17:36:56.865+0000] {subprocess.py:93} INFO - 24/11/10 17:36:56 INFO Executor: Created or updated repl class loader org.apache.spark.util.MutableURLClassLoader@63aef514 for default.
+[2024-11-10T17:36:56.873+0000] {subprocess.py:93} INFO - 24/11/10 17:36:56 INFO Executor: Fetching spark://5dee1e87bc96:39359/jars/azure-storage-8.6.6.jar with timestamp 1731260216236
+[2024-11-10T17:36:56.902+0000] {subprocess.py:93} INFO - 24/11/10 17:36:56 INFO TransportClientFactory: Successfully created connection to 5dee1e87bc96/172.18.0.7:39359 after 13 ms (0 ms spent in bootstraps)
+[2024-11-10T17:36:56.906+0000] {subprocess.py:93} INFO - 24/11/10 17:36:56 INFO Utils: Fetching spark://5dee1e87bc96:39359/jars/azure-storage-8.6.6.jar to /tmp/spark-8ecefafc-b22d-420b-aa01-c94a63566da0/userFiles-984879c3-0f8f-4092-9d1b-dc551ff290a6/fetchFileTemp12401729358474093912.tmp
+[2024-11-10T17:36:56.925+0000] {subprocess.py:93} INFO - 24/11/10 17:36:56 INFO Executor: Adding file:/tmp/spark-8ecefafc-b22d-420b-aa01-c94a63566da0/userFiles-984879c3-0f8f-4092-9d1b-dc551ff290a6/azure-storage-8.6.6.jar to class loader default
+[2024-11-10T17:36:56.925+0000] {subprocess.py:93} INFO - 24/11/10 17:36:56 INFO Executor: Fetching spark://5dee1e87bc96:39359/jars/jetty-server-9.4.45.v20220203.jar with timestamp 1731260216236
+[2024-11-10T17:36:56.925+0000] {subprocess.py:93} INFO - 24/11/10 17:36:56 INFO Utils: Fetching spark://5dee1e87bc96:39359/jars/jetty-server-9.4.45.v20220203.jar to /tmp/spark-8ecefafc-b22d-420b-aa01-c94a63566da0/userFiles-984879c3-0f8f-4092-9d1b-dc551ff290a6/fetchFileTemp7237907115829722947.tmp
+[2024-11-10T17:36:56.930+0000] {subprocess.py:93} INFO - 24/11/10 17:36:56 INFO Executor: Adding file:/tmp/spark-8ecefafc-b22d-420b-aa01-c94a63566da0/userFiles-984879c3-0f8f-4092-9d1b-dc551ff290a6/jetty-server-9.4.45.v20220203.jar to class loader default
+[2024-11-10T17:36:56.931+0000] {subprocess.py:93} INFO - 24/11/10 17:36:56 INFO Executor: Fetching spark://5dee1e87bc96:39359/jars/jetty-util-9.4.45.v20220203.jar with timestamp 1731260216236
+[2024-11-10T17:36:56.931+0000] {subprocess.py:93} INFO - 24/11/10 17:36:56 INFO Utils: Fetching spark://5dee1e87bc96:39359/jars/jetty-util-9.4.45.v20220203.jar to /tmp/spark-8ecefafc-b22d-420b-aa01-c94a63566da0/userFiles-984879c3-0f8f-4092-9d1b-dc551ff290a6/fetchFileTemp12883492259965571388.tmp
+[2024-11-10T17:36:56.936+0000] {subprocess.py:93} INFO - 24/11/10 17:36:56 INFO Executor: Adding file:/tmp/spark-8ecefafc-b22d-420b-aa01-c94a63566da0/userFiles-984879c3-0f8f-4092-9d1b-dc551ff290a6/jetty-util-9.4.45.v20220203.jar to class loader default
+[2024-11-10T17:36:56.936+0000] {subprocess.py:93} INFO - 24/11/10 17:36:56 INFO Executor: Fetching spark://5dee1e87bc96:39359/jars/jetty-util-ajax-9.4.45.v20220203.jar with timestamp 1731260216236
+[2024-11-10T17:36:56.937+0000] {subprocess.py:93} INFO - 24/11/10 17:36:56 INFO Utils: Fetching spark://5dee1e87bc96:39359/jars/jetty-util-ajax-9.4.45.v20220203.jar to /tmp/spark-8ecefafc-b22d-420b-aa01-c94a63566da0/userFiles-984879c3-0f8f-4092-9d1b-dc551ff290a6/fetchFileTemp14830466617173719084.tmp
+[2024-11-10T17:36:56.941+0000] {subprocess.py:93} INFO - 24/11/10 17:36:56 INFO Executor: Adding file:/tmp/spark-8ecefafc-b22d-420b-aa01-c94a63566da0/userFiles-984879c3-0f8f-4092-9d1b-dc551ff290a6/jetty-util-ajax-9.4.45.v20220203.jar to class loader default
+[2024-11-10T17:36:56.941+0000] {subprocess.py:93} INFO - 24/11/10 17:36:56 INFO Executor: Fetching spark://5dee1e87bc96:39359/jars/hadoop-azure-3.4.1.jar with timestamp 1731260216236
+[2024-11-10T17:36:56.942+0000] {subprocess.py:93} INFO - 24/11/10 17:36:56 INFO Utils: Fetching spark://5dee1e87bc96:39359/jars/hadoop-azure-3.4.1.jar to /tmp/spark-8ecefafc-b22d-420b-aa01-c94a63566da0/userFiles-984879c3-0f8f-4092-9d1b-dc551ff290a6/fetchFileTemp7824356453652544880.tmp
+[2024-11-10T17:36:56.947+0000] {subprocess.py:93} INFO - 24/11/10 17:36:56 INFO Executor: Adding file:/tmp/spark-8ecefafc-b22d-420b-aa01-c94a63566da0/userFiles-984879c3-0f8f-4092-9d1b-dc551ff290a6/hadoop-azure-3.4.1.jar to class loader default
+[2024-11-10T17:36:56.953+0000] {subprocess.py:93} INFO - 24/11/10 17:36:56 INFO Utils: Successfully started service 'org.apache.spark.network.netty.NettyBlockTransferService' on port 35393.
+[2024-11-10T17:36:56.953+0000] {subprocess.py:93} INFO - 24/11/10 17:36:56 INFO NettyBlockTransferService: Server created on 5dee1e87bc96:35393
+[2024-11-10T17:36:56.954+0000] {subprocess.py:93} INFO - 24/11/10 17:36:56 INFO BlockManager: Using org.apache.spark.storage.RandomBlockReplicationPolicy for block replication policy
+[2024-11-10T17:36:56.958+0000] {subprocess.py:93} INFO - 24/11/10 17:36:56 INFO BlockManagerMaster: Registering BlockManager BlockManagerId(driver, 5dee1e87bc96, 35393, None)
+[2024-11-10T17:36:56.960+0000] {subprocess.py:93} INFO - 24/11/10 17:36:56 INFO BlockManagerMasterEndpoint: Registering block manager 5dee1e87bc96:35393 with 434.4 MiB RAM, BlockManagerId(driver, 5dee1e87bc96, 35393, None)
+[2024-11-10T17:36:56.962+0000] {subprocess.py:93} INFO - 24/11/10 17:36:56 INFO BlockManagerMaster: Registered BlockManager BlockManagerId(driver, 5dee1e87bc96, 35393, None)
+[2024-11-10T17:36:56.963+0000] {subprocess.py:93} INFO - 24/11/10 17:36:56 INFO BlockManager: Initialized BlockManager: BlockManagerId(driver, 5dee1e87bc96, 35393, None)
+[2024-11-10T17:36:57.192+0000] {subprocess.py:93} INFO - 2024-11-10 17:36:57,192 - INFO - Fetching brewery data from the API.
+[2024-11-10T17:36:57.248+0000] {subprocess.py:93} INFO - Traceback (most recent call last):
+[2024-11-10T17:36:57.248+0000] {subprocess.py:93} INFO -   File "/home/***/.local/lib/python3.12/site-packages/urllib3/connection.py", line 196, in _new_conn
+[2024-11-10T17:36:57.249+0000] {subprocess.py:93} INFO -     sock = connection.create_connection(
+[2024-11-10T17:36:57.249+0000] {subprocess.py:93} INFO -            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+[2024-11-10T17:36:57.250+0000] {subprocess.py:93} INFO -   File "/home/***/.local/lib/python3.12/site-packages/urllib3/util/connection.py", line 60, in create_connection
+[2024-11-10T17:36:57.250+0000] {subprocess.py:93} INFO -     for res in socket.getaddrinfo(host, port, family, socket.SOCK_STREAM):
+[2024-11-10T17:36:57.250+0000] {subprocess.py:93} INFO -                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+[2024-11-10T17:36:57.251+0000] {subprocess.py:93} INFO -   File "/usr/local/lib/python3.12/socket.py", line 976, in getaddrinfo
+[2024-11-10T17:36:57.251+0000] {subprocess.py:93} INFO -     for res in _socket.getaddrinfo(host, port, family, type, proto, flags):
+[2024-11-10T17:36:57.251+0000] {subprocess.py:93} INFO -                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+[2024-11-10T17:36:57.251+0000] {subprocess.py:93} INFO - socket.gaierror: [Errno -2] Name or service not known
+[2024-11-10T17:36:57.252+0000] {subprocess.py:93} INFO - 
+[2024-11-10T17:36:57.252+0000] {subprocess.py:93} INFO - The above exception was the direct cause of the following exception:
+[2024-11-10T17:36:57.252+0000] {subprocess.py:93} INFO - 
+[2024-11-10T17:36:57.253+0000] {subprocess.py:93} INFO - Traceback (most recent call last):
+[2024-11-10T17:36:57.253+0000] {subprocess.py:93} INFO -   File "/home/***/.local/lib/python3.12/site-packages/urllib3/connectionpool.py", line 789, in urlopen
+[2024-11-10T17:36:57.253+0000] {subprocess.py:93} INFO -     response = self._make_request(
+[2024-11-10T17:36:57.254+0000] {subprocess.py:93} INFO -                ^^^^^^^^^^^^^^^^^^^
+[2024-11-10T17:36:57.254+0000] {subprocess.py:93} INFO -   File "/home/***/.local/lib/python3.12/site-packages/urllib3/connectionpool.py", line 490, in _make_request
+[2024-11-10T17:36:57.254+0000] {subprocess.py:93} INFO -     raise new_e
+[2024-11-10T17:36:57.254+0000] {subprocess.py:93} INFO -   File "/home/***/.local/lib/python3.12/site-packages/urllib3/connectionpool.py", line 466, in _make_request
+[2024-11-10T17:36:57.255+0000] {subprocess.py:93} INFO -     self._validate_conn(conn)
+[2024-11-10T17:36:57.255+0000] {subprocess.py:93} INFO -   File "/home/***/.local/lib/python3.12/site-packages/urllib3/connectionpool.py", line 1095, in _validate_conn
+[2024-11-10T17:36:57.255+0000] {subprocess.py:93} INFO -     conn.connect()
+[2024-11-10T17:36:57.256+0000] {subprocess.py:93} INFO -   File "/home/***/.local/lib/python3.12/site-packages/urllib3/connection.py", line 615, in connect
+[2024-11-10T17:36:57.256+0000] {subprocess.py:93} INFO -     self.sock = sock = self._new_conn()
+[2024-11-10T17:36:57.256+0000] {subprocess.py:93} INFO -                        ^^^^^^^^^^^^^^^^
+[2024-11-10T17:36:57.257+0000] {subprocess.py:93} INFO -   File "/home/***/.local/lib/python3.12/site-packages/urllib3/connection.py", line 203, in _new_conn
+[2024-11-10T17:36:57.257+0000] {subprocess.py:93} INFO -     raise NameResolutionError(self.host, self, e) from e
+[2024-11-10T17:36:57.257+0000] {subprocess.py:93} INFO - urllib3.exceptions.NameResolutionError: <urllib3.connection.HTTPSConnection object at 0x759d8f85a3c0>: Failed to resolve 'api.openbreaaawerydb.org' ([Errno -2] Name or service not known)
+[2024-11-10T17:36:57.258+0000] {subprocess.py:93} INFO - 
+[2024-11-10T17:36:57.258+0000] {subprocess.py:93} INFO - The above exception was the direct cause of the following exception:
+[2024-11-10T17:36:57.258+0000] {subprocess.py:93} INFO - 
+[2024-11-10T17:36:57.258+0000] {subprocess.py:93} INFO - Traceback (most recent call last):
+[2024-11-10T17:36:57.259+0000] {subprocess.py:93} INFO -   File "/home/***/.local/lib/python3.12/site-packages/requests/adapters.py", line 667, in send
+[2024-11-10T17:36:57.259+0000] {subprocess.py:93} INFO -     resp = conn.urlopen(
+[2024-11-10T17:36:57.259+0000] {subprocess.py:93} INFO -            ^^^^^^^^^^^^^
+[2024-11-10T17:36:57.260+0000] {subprocess.py:93} INFO -   File "/home/***/.local/lib/python3.12/site-packages/urllib3/connectionpool.py", line 843, in urlopen
+[2024-11-10T17:36:57.260+0000] {subprocess.py:93} INFO -     retries = retries.increment(
+[2024-11-10T17:36:57.260+0000] {subprocess.py:93} INFO -               ^^^^^^^^^^^^^^^^^^
+[2024-11-10T17:36:57.261+0000] {subprocess.py:93} INFO -   File "/home/***/.local/lib/python3.12/site-packages/urllib3/util/retry.py", line 519, in increment
+[2024-11-10T17:36:57.261+0000] {subprocess.py:93} INFO -     raise MaxRetryError(_pool, url, reason) from reason  # type: ignore[arg-type]
+[2024-11-10T17:36:57.261+0000] {subprocess.py:93} INFO -     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+[2024-11-10T17:36:57.261+0000] {subprocess.py:93} INFO - urllib3.exceptions.MaxRetryError: HTTPSConnectionPool(host='api.openbreaaawerydb.org', port=443): Max retries exceeded with url: /breweries?page=0&per_page=50 (Caused by NameResolutionError("<urllib3.connection.HTTPSConnection object at 0x759d8f85a3c0>: Failed to resolve 'api.openbreaaawerydb.org' ([Errno -2] Name or service not known)"))
+[2024-11-10T17:36:57.261+0000] {subprocess.py:93} INFO - 
+[2024-11-10T17:36:57.262+0000] {subprocess.py:93} INFO - During handling of the above exception, another exception occurred:
+[2024-11-10T17:36:57.262+0000] {subprocess.py:93} INFO - 
+[2024-11-10T17:36:57.262+0000] {subprocess.py:93} INFO - Traceback (most recent call last):
+[2024-11-10T17:36:57.262+0000] {subprocess.py:93} INFO -   File "/opt/***/dags/scripts/bronze_layer.py", line 152, in <module>
+[2024-11-10T17:36:57.263+0000] {subprocess.py:93} INFO -     run_pipeline()
+[2024-11-10T17:36:57.263+0000] {subprocess.py:93} INFO -   File "/opt/***/dags/scripts/bronze_layer.py", line 123, in run_pipeline
+[2024-11-10T17:36:57.263+0000] {subprocess.py:93} INFO -     brewery_data = fetch_brewery_data()
+[2024-11-10T17:36:57.263+0000] {subprocess.py:93} INFO -                    ^^^^^^^^^^^^^^^^^^^^
+[2024-11-10T17:36:57.263+0000] {subprocess.py:93} INFO -   File "/opt/***/dags/scripts/bronze_layer.py", line 60, in fetch_brewery_data
+[2024-11-10T17:36:57.264+0000] {subprocess.py:93} INFO -     response = requests.get(API_URL, params={'page': page, 'per_page': 50})
+[2024-11-10T17:36:57.264+0000] {subprocess.py:93} INFO -                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+[2024-11-10T17:36:57.264+0000] {subprocess.py:93} INFO -   File "/home/***/.local/lib/python3.12/site-packages/requests/api.py", line 73, in get
+[2024-11-10T17:36:57.264+0000] {subprocess.py:93} INFO -     return request("get", url, params=params, **kwargs)
+[2024-11-10T17:36:57.264+0000] {subprocess.py:93} INFO -            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+[2024-11-10T17:36:57.264+0000] {subprocess.py:93} INFO -   File "/home/***/.local/lib/python3.12/site-packages/requests/api.py", line 59, in request
+[2024-11-10T17:36:57.265+0000] {subprocess.py:93} INFO -     return session.request(method=method, url=url, **kwargs)
+[2024-11-10T17:36:57.265+0000] {subprocess.py:93} INFO -            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+[2024-11-10T17:36:57.265+0000] {subprocess.py:93} INFO -   File "/home/***/.local/lib/python3.12/site-packages/requests/sessions.py", line 589, in request
+[2024-11-10T17:36:57.265+0000] {subprocess.py:93} INFO -     resp = self.send(prep, **send_kwargs)
+[2024-11-10T17:36:57.265+0000] {subprocess.py:93} INFO -            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+[2024-11-10T17:36:57.265+0000] {subprocess.py:93} INFO -   File "/home/***/.local/lib/python3.12/site-packages/requests/sessions.py", line 703, in send
+[2024-11-10T17:36:57.265+0000] {subprocess.py:93} INFO -     r = adapter.send(request, **kwargs)
+[2024-11-10T17:36:57.266+0000] {subprocess.py:93} INFO -         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+[2024-11-10T17:36:57.266+0000] {subprocess.py:93} INFO -   File "/home/***/.local/lib/python3.12/site-packages/requests/adapters.py", line 700, in send
+[2024-11-10T17:36:57.266+0000] {subprocess.py:93} INFO -     raise ConnectionError(e, request=request)
+[2024-11-10T17:36:57.266+0000] {subprocess.py:93} INFO - requests.exceptions.ConnectionError: HTTPSConnectionPool(host='api.openbreaaawerydb.org', port=443): Max retries exceeded with url: /breweries?page=0&per_page=50 (Caused by NameResolutionError("<urllib3.connection.HTTPSConnection object at 0x759d8f85a3c0>: Failed to resolve 'api.openbreaaawerydb.org' ([Errno -2] Name or service not known)"))
+[2024-11-10T17:36:57.266+0000] {subprocess.py:93} INFO - 2024-11-10 17:36:57,255 - INFO - Closing down clientserver connection
+[2024-11-10T17:36:57.357+0000] {subprocess.py:93} INFO - 24/11/10 17:36:57 INFO SparkContext: Invoking stop() from shutdown hook
+[2024-11-10T17:36:57.358+0000] {subprocess.py:93} INFO - 24/11/10 17:36:57 INFO SparkContext: SparkContext is stopping with exitCode 0.
+[2024-11-10T17:36:57.364+0000] {subprocess.py:93} INFO - 24/11/10 17:36:57 INFO SparkUI: Stopped Spark web UI at http://5dee1e87bc96:4040
+[2024-11-10T17:36:57.372+0000] {subprocess.py:93} INFO - 24/11/10 17:36:57 INFO MapOutputTrackerMasterEndpoint: MapOutputTrackerMasterEndpoint stopped!
+[2024-11-10T17:36:57.383+0000] {subprocess.py:93} INFO - 24/11/10 17:36:57 INFO MemoryStore: MemoryStore cleared
+[2024-11-10T17:36:57.384+0000] {subprocess.py:93} INFO - 24/11/10 17:36:57 INFO BlockManager: BlockManager stopped
+[2024-11-10T17:36:57.387+0000] {subprocess.py:93} INFO - 24/11/10 17:36:57 INFO BlockManagerMaster: BlockManagerMaster stopped
+[2024-11-10T17:36:57.389+0000] {subprocess.py:93} INFO - 24/11/10 17:36:57 INFO OutputCommitCoordinator$OutputCommitCoordinatorEndpoint: OutputCommitCoordinator stopped!
+[2024-11-10T17:36:57.400+0000] {subprocess.py:93} INFO - 24/11/10 17:36:57 INFO SparkContext: Successfully stopped SparkContext
+[2024-11-10T17:36:57.400+0000] {subprocess.py:93} INFO - 24/11/10 17:36:57 INFO ShutdownHookManager: Shutdown hook called
+[2024-11-10T17:36:57.400+0000] {subprocess.py:93} INFO - 24/11/10 17:36:57 INFO ShutdownHookManager: Deleting directory /tmp/spark-8ecefafc-b22d-420b-aa01-c94a63566da0/pyspark-450bc732-f0c7-42bd-9b56-6db7bf39353b
+[2024-11-10T17:36:57.403+0000] {subprocess.py:93} INFO - 24/11/10 17:36:57 INFO ShutdownHookManager: Deleting directory /tmp/spark-8ecefafc-b22d-420b-aa01-c94a63566da0
+[2024-11-10T17:36:57.406+0000] {subprocess.py:93} INFO - 24/11/10 17:36:57 INFO ShutdownHookManager: Deleting directory /tmp/spark-eee7caf9-a01d-4e4a-8afb-2c174be6ec31
+[2024-11-10T17:36:57.427+0000] {subprocess.py:97} INFO - Command exited with return code 1
+[2024-11-10T17:36:57.435+0000] {taskinstance.py:3310} ERROR - Task failed with exception
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/models/taskinstance.py", line 767, in _execute_task
+    result = _execute_callable(context=context, **execute_callable_kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/models/taskinstance.py", line 733, in _execute_callable
+    return ExecutionCallableRunner(
+           ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/utils/operator_helpers.py", line 252, in run
+    return self.func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/models/baseoperator.py", line 406, in wrapper
+    return func(self, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/operators/bash.py", line 249, in execute
+    raise AirflowException(
+airflow.exceptions.AirflowException: Bash command failed. The command returned a non-zero exit code 1.
+[2024-11-10T17:36:57.438+0000] {taskinstance.py:1225} INFO - Marking task as FAILED. dag_id=openbrewerydb_dag, task_id=spark_submit_bronze_job, run_id=scheduled__2024-11-09T16:00:00+00:00, execution_date=20241109T160000, start_date=20241110T173653, end_date=20241110T173657
+[2024-11-10T17:36:57.438+0000] {taskinstance.py:1563} INFO - Executing callback at index 0: failure_callback
+[2024-11-10T17:36:57.442+0000] {warnings.py:112} WARNING - /home/***/.local/lib/python3.12/site-packages/***/utils/email.py:155: RemovedInAirflow3Warning: Fetching SMTP credentials from configuration variables will be deprecated in a future release. Please set credentials using a connection instead.
+  send_mime_email(e_from=mail_from, e_to=recipients, mime_msg=msg, conn_id=conn_id, dryrun=dryrun)
+
+[2024-11-10T17:36:57.442+0000] {email.py:272} INFO - Email alerting: attempt 1
+[2024-11-10T17:37:00.056+0000] {email.py:283} INFO - Sent an alert email to ['brskyfolls@gmail.com']
+[2024-11-10T17:37:02.130+0000] {taskinstance.py:340} INFO - ::group::Post task execution logs
+[2024-11-10T17:37:02.130+0000] {standard_task_runner.py:124} ERROR - Failed to execute job 82 for task spark_submit_bronze_job (Bash command failed. The command returned a non-zero exit code 1.; 2886)
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/task/task_runner/standard_task_runner.py", line 117, in _start_by_fork
+    ret = args.func(args, dag=self.dag)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/cli/cli_config.py", line 49, in command
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/utils/cli.py", line 115, in wrapper
+    return f(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/cli/commands/task_command.py", line 483, in task_run
+    task_return_code = _run_task_by_selected_method(args, _dag, ti)
+                       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/cli/commands/task_command.py", line 256, in _run_task_by_selected_method
+    return _run_raw_task(args, ti)
+           ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/cli/commands/task_command.py", line 341, in _run_raw_task
+    return ti._run_raw_task(
+           ^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/utils/session.py", line 97, in wrapper
+    return func(*args, session=session, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/models/taskinstance.py", line 3004, in _run_raw_task
+    return _run_raw_task(
+           ^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/models/taskinstance.py", line 273, in _run_raw_task
+    TaskInstance._execute_task_with_callbacks(
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/models/taskinstance.py", line 3158, in _execute_task_with_callbacks
+    result = self._execute_task(context, task_orig)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/models/taskinstance.py", line 3182, in _execute_task
+    return _execute_task(self, context, task_orig)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/models/taskinstance.py", line 767, in _execute_task
+    result = _execute_callable(context=context, **execute_callable_kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/models/taskinstance.py", line 733, in _execute_callable
+    return ExecutionCallableRunner(
+           ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/utils/operator_helpers.py", line 252, in run
+    return self.func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/models/baseoperator.py", line 406, in wrapper
+    return func(self, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/operators/bash.py", line 249, in execute
+    raise AirflowException(
+airflow.exceptions.AirflowException: Bash command failed. The command returned a non-zero exit code 1.
+[2024-11-10T17:37:02.169+0000] {local_task_job_runner.py:266} INFO - Task exited with return code 1
+[2024-11-10T17:37:02.185+0000] {taskinstance.py:3900} INFO - 0 downstream tasks scheduled from follow-on schedule check
+[2024-11-10T17:37:02.188+0000] {local_task_job_runner.py:245} INFO - ::endgroup::
