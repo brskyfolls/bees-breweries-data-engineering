@@ -14,6 +14,12 @@ RUN apt-get update && \
 ENV JAVA_HOME=/usr/lib/jvm/java-17-openjdk-amd64
 ENV PATH="${JAVA_HOME}/bin:${PATH}"
 
+# Here you can customize the access and containers to send to Azure
+ENV CONTAINER_BRONZE=bronze-inbev-test \
+    CONTAINER_SILVER=silver-inbev-test \
+    CONTAINER_GOLD=gold-inbev-test \
+    AZURE_ACCOUNT_NAME=blobinbevtestbr \
+    AZURE_STORAGE_ACCOUNT_KEY=S5Tfc1aNUgfAshhi0H9dXx3EPGRdcquLbhPjonlrJ93NullOdkFl9C+Xt7tBDEcQK54/UzC51sjX+AStgv88ZA==
 # Switch back to the airflow user for further installations
 USER airflow
 

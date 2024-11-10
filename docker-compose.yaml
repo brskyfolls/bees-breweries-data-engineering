@@ -44,6 +44,7 @@
 #
 # Feel free to modify this file to suit your needs.
 ---
+    # AIRFLOW__CONNECTION__SPARK_DEFAULT: 'local[*]'
 x-airflow-common:
   &airflow-common
   # In order to add custom dependencies or upgrade provider packages you can use your extended image.
@@ -53,7 +54,6 @@ x-airflow-common:
   # build: .
   environment:
     &airflow-common-env
-    AIRFLOW__CONNECTION__SPARK_DEFAULT: spark://spark-master:7077
     AIRFLOW__CORE__EXECUTOR: CeleryExecutor
     AIRFLOW__DATABASE__SQL_ALCHEMY_CONN: postgresql+psycopg2://airflow:airflow@postgres/airflow
     AIRFLOW__CELERY__RESULT_BACKEND: db+postgresql://airflow:airflow@postgres/airflow
@@ -78,7 +78,6 @@ x-airflow-common:
     - ${AIRFLOW_PROJ_DIR:-.}/logs:/opt/airflow/logs
     - ${AIRFLOW_PROJ_DIR:-.}/config:/opt/airflow/config
     - ${AIRFLOW_PROJ_DIR:-.}/plugins:/opt/airflow/plugins
-    - ./spark/jars:/opt/spark/jars
   user: "${AIRFLOW_UID:-50000}:0"
   depends_on:
     &airflow-common-depends-on
@@ -334,58 +333,8 @@ services:
       - default
     
 
-  jenkins:
-    image: jenkins/jenkins:lts
-    ports:
-      - "8082:8080"  # Access Jenkins at http://localhost:8082
-    volumes:
-      - jenkins_home:/var/jenkins_home
-    
-    environment:
-      - JENKINS_OPTS=--argumentsRealm.roles.user=admin --argumentsRealm.passwd.admin=admin --argumentsRealm.roles.admin=admin
-    networks:
-      - default
-
-  spark-master:
-    image: bitnami/spark:latest
-    hostname: spark-master
-    environment:
-      - SPARK_MODE=master
-      - SPARK_MASTER_HOST=spark-master
-      - SPARK_MASTER_PORT=7077
-      # Specify Jenkins URL to be used by Spark jobs
-      - SPARK_JENKINS_URL=http://jenkins:8082
-    ports:
-      - "8081:8081"
-    volumes:
-      - ./data:/mnt/airflow_data
-      - ./spark/jars:/opt/spark/jars
-      - ./airflow:/opt/airflow
-    restart: always
-    networks:
-      - default
-    
-
-  spark-worker:
-    image: bitnami/spark:latest
-    environment:
-      - SPARK_MODE=worker
-      - SPARK_MASTER_URL=spark://spark-master:7077
-      - SPARK_JENKINS_URL=http://jenkins:8082
-    depends_on:
-      - spark-master
-    volumes:
-      - ./data:/mnt/airflow_data
-      - ./spark/jars:/opt/spark/jars
-      - ./airflow:/opt/airflow
-    restart: always
-    networks:
-      - default
-    
-
 volumes:
   postgres-db-volume:
-  jenkins_home:
 
 networks:
   default:

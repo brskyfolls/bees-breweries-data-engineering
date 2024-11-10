@@ -1,0 +1,414 @@
+[2024-11-10T13:57:16.648+0000] {local_task_job_runner.py:123} INFO - ::group::Pre task execution logs
+[2024-11-10T13:57:16.661+0000] {taskinstance.py:2612} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: openbrewerydb_dag.spark_submit_bronze_job manual__2024-11-10T13:57:14.987733+00:00 [queued]>
+[2024-11-10T13:57:16.669+0000] {taskinstance.py:2612} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: openbrewerydb_dag.spark_submit_bronze_job manual__2024-11-10T13:57:14.987733+00:00 [queued]>
+[2024-11-10T13:57:16.670+0000] {taskinstance.py:2865} INFO - Starting attempt 1 of 2
+[2024-11-10T13:57:16.681+0000] {taskinstance.py:2888} INFO - Executing <Task(BashOperator): spark_submit_bronze_job> on 2024-11-10 13:57:14.987733+00:00
+[2024-11-10T13:57:16.686+0000] {warnings.py:112} WARNING - /home/***/.local/lib/python3.12/site-packages/***/task/task_runner/standard_task_runner.py:70: DeprecationWarning: This process (pid=71) is multi-threaded, use of fork() may lead to deadlocks in the child.
+  pid = os.fork()
+
+[2024-11-10T13:57:16.687+0000] {standard_task_runner.py:72} INFO - Started process 72 to run task
+[2024-11-10T13:57:16.688+0000] {standard_task_runner.py:104} INFO - Running: ['***', 'tasks', 'run', 'openbrewerydb_dag', 'spark_submit_bronze_job', 'manual__2024-11-10T13:57:14.987733+00:00', '--job-id', '16', '--raw', '--subdir', 'DAGS_FOLDER/openbrewerydb_dag.py', '--cfg-path', '/tmp/tmpcmvn8lhe']
+[2024-11-10T13:57:16.689+0000] {standard_task_runner.py:105} INFO - Job 16: Subtask spark_submit_bronze_job
+[2024-11-10T13:57:16.721+0000] {task_command.py:467} INFO - Running <TaskInstance: openbrewerydb_dag.spark_submit_bronze_job manual__2024-11-10T13:57:14.987733+00:00 [running]> on host c64f0d2c37de
+[2024-11-10T13:57:16.786+0000] {taskinstance.py:3131} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='***' AIRFLOW_CTX_DAG_ID='openbrewerydb_dag' AIRFLOW_CTX_TASK_ID='spark_submit_bronze_job' AIRFLOW_CTX_EXECUTION_DATE='2024-11-10T13:57:14.987733+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='manual__2024-11-10T13:57:14.987733+00:00'
+[2024-11-10T13:57:16.786+0000] {taskinstance.py:731} INFO - ::endgroup::
+[2024-11-10T13:57:16.816+0000] {subprocess.py:63} INFO - Tmp dir root location: /tmp
+[2024-11-10T13:57:16.817+0000] {subprocess.py:75} INFO - Running command: ['/usr/bin/bash', '-c', '\n    spark-submit         --master spark://spark-master:7077         --jars /opt/***/dags/scripts/jars/hadoop-azure-3.4.1.jar,/opt/***/dags/scripts/jars/azure-storage-8.6.6.jar,/opt/***/dags/scripts/jars/jetty-server-9.4.45.v20220203.jar,/opt/***/dags/scripts/jars/jetty-util-9.4.45.v20220203.jar,/opt/***/dags/scripts/jars/jetty-util-ajax-9.4.45.v20220203.jar         /opt/***/dags/scripts/bronze_layer.py\n    ']
+[2024-11-10T13:57:16.826+0000] {subprocess.py:86} INFO - Output:
+[2024-11-10T13:57:19.020+0000] {subprocess.py:93} INFO - 24/11/10 13:57:19 WARN NativeCodeLoader: Unable to load native-hadoop library for your platform... using builtin-java classes where applicable
+[2024-11-10T13:57:20.943+0000] {subprocess.py:93} INFO - 2024-11-10 13:57:20,943 - INFO - Pipeline execution started.
+[2024-11-10T13:57:20.944+0000] {subprocess.py:93} INFO - 2024-11-10 13:57:20,943 - INFO - Initializing Spark session.
+[2024-11-10T13:57:21.009+0000] {subprocess.py:93} INFO - 24/11/10 13:57:21 INFO SparkContext: Running Spark version 3.5.3
+[2024-11-10T13:57:21.010+0000] {subprocess.py:93} INFO - 24/11/10 13:57:21 INFO SparkContext: OS info Linux, 6.10.13-3-MANJARO, amd64
+[2024-11-10T13:57:21.010+0000] {subprocess.py:93} INFO - 24/11/10 13:57:21 INFO SparkContext: Java version 17.0.13
+[2024-11-10T13:57:21.038+0000] {subprocess.py:93} INFO - 24/11/10 13:57:21 INFO ResourceUtils: ==============================================================
+[2024-11-10T13:57:21.038+0000] {subprocess.py:93} INFO - 24/11/10 13:57:21 INFO ResourceUtils: No custom resources configured for spark.driver.
+[2024-11-10T13:57:21.039+0000] {subprocess.py:93} INFO - 24/11/10 13:57:21 INFO ResourceUtils: ==============================================================
+[2024-11-10T13:57:21.039+0000] {subprocess.py:93} INFO - 24/11/10 13:57:21 INFO SparkContext: Submitted application: Brewery Data Pipeline
+[2024-11-10T13:57:21.064+0000] {subprocess.py:93} INFO - 24/11/10 13:57:21 INFO ResourceProfile: Default ResourceProfile created, executor resources: Map(cores -> name: cores, amount: 1, script: , vendor: , memory -> name: memory, amount: 1024, script: , vendor: , offHeap -> name: offHeap, amount: 0, script: , vendor: ), task resources: Map(cpus -> name: cpus, amount: 1.0)
+[2024-11-10T13:57:21.072+0000] {subprocess.py:93} INFO - 24/11/10 13:57:21 INFO ResourceProfile: Limiting resource is cpu
+[2024-11-10T13:57:21.073+0000] {subprocess.py:93} INFO - 24/11/10 13:57:21 INFO ResourceProfileManager: Added ResourceProfile id: 0
+[2024-11-10T13:57:21.143+0000] {subprocess.py:93} INFO - 24/11/10 13:57:21 INFO SecurityManager: Changing view acls to: ***
+[2024-11-10T13:57:21.143+0000] {subprocess.py:93} INFO - 24/11/10 13:57:21 INFO SecurityManager: Changing modify acls to: ***
+[2024-11-10T13:57:21.144+0000] {subprocess.py:93} INFO - 24/11/10 13:57:21 INFO SecurityManager: Changing view acls groups to:
+[2024-11-10T13:57:21.144+0000] {subprocess.py:93} INFO - 24/11/10 13:57:21 INFO SecurityManager: Changing modify acls groups to:
+[2024-11-10T13:57:21.144+0000] {subprocess.py:93} INFO - 24/11/10 13:57:21 INFO SecurityManager: SecurityManager: authentication disabled; ui acls disabled; users with view permissions: ***; groups with view permissions: EMPTY; users with modify permissions: ***; groups with modify permissions: EMPTY
+[2024-11-10T13:57:21.379+0000] {subprocess.py:93} INFO - 24/11/10 13:57:21 INFO Utils: Successfully started service 'sparkDriver' on port 34973.
+[2024-11-10T13:57:21.424+0000] {subprocess.py:93} INFO - 24/11/10 13:57:21 INFO SparkEnv: Registering MapOutputTracker
+[2024-11-10T13:57:21.498+0000] {subprocess.py:93} INFO - 24/11/10 13:57:21 INFO SparkEnv: Registering BlockManagerMaster
+[2024-11-10T13:57:21.538+0000] {subprocess.py:93} INFO - 24/11/10 13:57:21 INFO BlockManagerMasterEndpoint: Using org.apache.spark.storage.DefaultTopologyMapper for getting topology information
+[2024-11-10T13:57:21.539+0000] {subprocess.py:93} INFO - 24/11/10 13:57:21 INFO BlockManagerMasterEndpoint: BlockManagerMasterEndpoint up
+[2024-11-10T13:57:21.547+0000] {subprocess.py:93} INFO - 24/11/10 13:57:21 INFO SparkEnv: Registering BlockManagerMasterHeartbeat
+[2024-11-10T13:57:21.585+0000] {subprocess.py:93} INFO - 24/11/10 13:57:21 INFO DiskBlockManager: Created local directory at /tmp/blockmgr-1c318509-0d0c-4228-bc65-72034f603ef1
+[2024-11-10T13:57:21.599+0000] {subprocess.py:93} INFO - 24/11/10 13:57:21 INFO MemoryStore: MemoryStore started with capacity 434.4 MiB
+[2024-11-10T13:57:21.614+0000] {subprocess.py:93} INFO - 24/11/10 13:57:21 INFO SparkEnv: Registering OutputCommitCoordinator
+[2024-11-10T13:57:21.826+0000] {subprocess.py:93} INFO - 24/11/10 13:57:21 INFO JettyUtils: Start Jetty 0.0.0.0:4040 for SparkUI
+[2024-11-10T13:57:21.931+0000] {subprocess.py:93} INFO - 24/11/10 13:57:21 INFO Utils: Successfully started service 'SparkUI' on port 4040.
+[2024-11-10T13:57:21.973+0000] {subprocess.py:93} INFO - 24/11/10 13:57:21 INFO SparkContext: Added JAR file:///opt/***/dags/scripts/jars/hadoop-azure-3.4.1.jar at spark://c64f0d2c37de:34973/jars/hadoop-azure-3.4.1.jar with timestamp 1731247041001
+[2024-11-10T13:57:21.973+0000] {subprocess.py:93} INFO - 24/11/10 13:57:21 INFO SparkContext: Added JAR file:///opt/***/dags/scripts/jars/azure-storage-8.6.6.jar at spark://c64f0d2c37de:34973/jars/azure-storage-8.6.6.jar with timestamp 1731247041001
+[2024-11-10T13:57:21.973+0000] {subprocess.py:93} INFO - 24/11/10 13:57:21 INFO SparkContext: Added JAR file:///opt/***/dags/scripts/jars/jetty-server-9.4.45.v20220203.jar at spark://c64f0d2c37de:34973/jars/jetty-server-9.4.45.v20220203.jar with timestamp 1731247041001
+[2024-11-10T13:57:21.974+0000] {subprocess.py:93} INFO - 24/11/10 13:57:21 INFO SparkContext: Added JAR file:///opt/***/dags/scripts/jars/jetty-util-9.4.45.v20220203.jar at spark://c64f0d2c37de:34973/jars/jetty-util-9.4.45.v20220203.jar with timestamp 1731247041001
+[2024-11-10T13:57:21.974+0000] {subprocess.py:93} INFO - 24/11/10 13:57:21 INFO SparkContext: Added JAR file:///opt/***/dags/scripts/jars/jetty-util-ajax-9.4.45.v20220203.jar at spark://c64f0d2c37de:34973/jars/jetty-util-ajax-9.4.45.v20220203.jar with timestamp 1731247041001
+[2024-11-10T13:57:22.063+0000] {subprocess.py:93} INFO - 24/11/10 13:57:22 INFO Executor: Starting executor ID driver on host c64f0d2c37de
+[2024-11-10T13:57:22.064+0000] {subprocess.py:93} INFO - 24/11/10 13:57:22 INFO Executor: OS info Linux, 6.10.13-3-MANJARO, amd64
+[2024-11-10T13:57:22.064+0000] {subprocess.py:93} INFO - 24/11/10 13:57:22 INFO Executor: Java version 17.0.13
+[2024-11-10T13:57:22.073+0000] {subprocess.py:93} INFO - 24/11/10 13:57:22 INFO Executor: Starting executor with user classpath (userClassPathFirst = false): ''
+[2024-11-10T13:57:22.073+0000] {subprocess.py:93} INFO - 24/11/10 13:57:22 INFO Executor: Created or updated repl class loader org.apache.spark.util.MutableURLClassLoader@519a956e for default.
+[2024-11-10T13:57:22.087+0000] {subprocess.py:93} INFO - 24/11/10 13:57:22 INFO Executor: Fetching spark://c64f0d2c37de:34973/jars/azure-storage-8.6.6.jar with timestamp 1731247041001
+[2024-11-10T13:57:22.139+0000] {subprocess.py:93} INFO - 24/11/10 13:57:22 INFO TransportClientFactory: Successfully created connection to c64f0d2c37de/172.18.0.7:34973 after 25 ms (0 ms spent in bootstraps)
+[2024-11-10T13:57:22.146+0000] {subprocess.py:93} INFO - 24/11/10 13:57:22 INFO Utils: Fetching spark://c64f0d2c37de:34973/jars/azure-storage-8.6.6.jar to /tmp/spark-66492b79-75a4-44e4-bbd9-688a3fddaea8/userFiles-4474cd80-8491-4f41-bee9-626d0300907c/fetchFileTemp5193480737625472986.tmp
+[2024-11-10T13:57:22.185+0000] {subprocess.py:93} INFO - 24/11/10 13:57:22 INFO Executor: Adding file:/tmp/spark-66492b79-75a4-44e4-bbd9-688a3fddaea8/userFiles-4474cd80-8491-4f41-bee9-626d0300907c/azure-storage-8.6.6.jar to class loader default
+[2024-11-10T13:57:22.185+0000] {subprocess.py:93} INFO - 24/11/10 13:57:22 INFO Executor: Fetching spark://c64f0d2c37de:34973/jars/jetty-util-9.4.45.v20220203.jar with timestamp 1731247041001
+[2024-11-10T13:57:22.186+0000] {subprocess.py:93} INFO - 24/11/10 13:57:22 INFO Utils: Fetching spark://c64f0d2c37de:34973/jars/jetty-util-9.4.45.v20220203.jar to /tmp/spark-66492b79-75a4-44e4-bbd9-688a3fddaea8/userFiles-4474cd80-8491-4f41-bee9-626d0300907c/fetchFileTemp17336518837445597077.tmp
+[2024-11-10T13:57:22.196+0000] {subprocess.py:93} INFO - 24/11/10 13:57:22 INFO Executor: Adding file:/tmp/spark-66492b79-75a4-44e4-bbd9-688a3fddaea8/userFiles-4474cd80-8491-4f41-bee9-626d0300907c/jetty-util-9.4.45.v20220203.jar to class loader default
+[2024-11-10T13:57:22.196+0000] {subprocess.py:93} INFO - 24/11/10 13:57:22 INFO Executor: Fetching spark://c64f0d2c37de:34973/jars/jetty-server-9.4.45.v20220203.jar with timestamp 1731247041001
+[2024-11-10T13:57:22.196+0000] {subprocess.py:93} INFO - 24/11/10 13:57:22 INFO Utils: Fetching spark://c64f0d2c37de:34973/jars/jetty-server-9.4.45.v20220203.jar to /tmp/spark-66492b79-75a4-44e4-bbd9-688a3fddaea8/userFiles-4474cd80-8491-4f41-bee9-626d0300907c/fetchFileTemp2397771609816594289.tmp
+[2024-11-10T13:57:22.209+0000] {subprocess.py:93} INFO - 24/11/10 13:57:22 INFO Executor: Adding file:/tmp/spark-66492b79-75a4-44e4-bbd9-688a3fddaea8/userFiles-4474cd80-8491-4f41-bee9-626d0300907c/jetty-server-9.4.45.v20220203.jar to class loader default
+[2024-11-10T13:57:22.209+0000] {subprocess.py:93} INFO - 24/11/10 13:57:22 INFO Executor: Fetching spark://c64f0d2c37de:34973/jars/jetty-util-ajax-9.4.45.v20220203.jar with timestamp 1731247041001
+[2024-11-10T13:57:22.210+0000] {subprocess.py:93} INFO - 24/11/10 13:57:22 INFO Utils: Fetching spark://c64f0d2c37de:34973/jars/jetty-util-ajax-9.4.45.v20220203.jar to /tmp/spark-66492b79-75a4-44e4-bbd9-688a3fddaea8/userFiles-4474cd80-8491-4f41-bee9-626d0300907c/fetchFileTemp3053479990461501614.tmp
+[2024-11-10T13:57:22.217+0000] {subprocess.py:93} INFO - 24/11/10 13:57:22 INFO Executor: Adding file:/tmp/spark-66492b79-75a4-44e4-bbd9-688a3fddaea8/userFiles-4474cd80-8491-4f41-bee9-626d0300907c/jetty-util-ajax-9.4.45.v20220203.jar to class loader default
+[2024-11-10T13:57:22.218+0000] {subprocess.py:93} INFO - 24/11/10 13:57:22 INFO Executor: Fetching spark://c64f0d2c37de:34973/jars/hadoop-azure-3.4.1.jar with timestamp 1731247041001
+[2024-11-10T13:57:22.218+0000] {subprocess.py:93} INFO - 24/11/10 13:57:22 INFO Utils: Fetching spark://c64f0d2c37de:34973/jars/hadoop-azure-3.4.1.jar to /tmp/spark-66492b79-75a4-44e4-bbd9-688a3fddaea8/userFiles-4474cd80-8491-4f41-bee9-626d0300907c/fetchFileTemp5017095662282498818.tmp
+[2024-11-10T13:57:22.228+0000] {subprocess.py:93} INFO - 24/11/10 13:57:22 INFO Executor: Adding file:/tmp/spark-66492b79-75a4-44e4-bbd9-688a3fddaea8/userFiles-4474cd80-8491-4f41-bee9-626d0300907c/hadoop-azure-3.4.1.jar to class loader default
+[2024-11-10T13:57:22.239+0000] {subprocess.py:93} INFO - 24/11/10 13:57:22 INFO Utils: Successfully started service 'org.apache.spark.network.netty.NettyBlockTransferService' on port 35069.
+[2024-11-10T13:57:22.240+0000] {subprocess.py:93} INFO - 24/11/10 13:57:22 INFO NettyBlockTransferService: Server created on c64f0d2c37de:35069
+[2024-11-10T13:57:22.242+0000] {subprocess.py:93} INFO - 24/11/10 13:57:22 INFO BlockManager: Using org.apache.spark.storage.RandomBlockReplicationPolicy for block replication policy
+[2024-11-10T13:57:22.248+0000] {subprocess.py:93} INFO - 24/11/10 13:57:22 INFO BlockManagerMaster: Registering BlockManager BlockManagerId(driver, c64f0d2c37de, 35069, None)
+[2024-11-10T13:57:22.252+0000] {subprocess.py:93} INFO - 24/11/10 13:57:22 INFO BlockManagerMasterEndpoint: Registering block manager c64f0d2c37de:35069 with 434.4 MiB RAM, BlockManagerId(driver, c64f0d2c37de, 35069, None)
+[2024-11-10T13:57:22.254+0000] {subprocess.py:93} INFO - 24/11/10 13:57:22 INFO BlockManagerMaster: Registered BlockManager BlockManagerId(driver, c64f0d2c37de, 35069, None)
+[2024-11-10T13:57:22.255+0000] {subprocess.py:93} INFO - 24/11/10 13:57:22 INFO BlockManager: Initialized BlockManager: BlockManagerId(driver, c64f0d2c37de, 35069, None)
+[2024-11-10T13:57:22.635+0000] {subprocess.py:93} INFO - 2024-11-10 13:57:22,635 - INFO - Fetching brewery data from the API.
+[2024-11-10T13:58:36.263+0000] {subprocess.py:93} INFO - 2024-11-10 13:58:36,262 - INFO - Fetched 8405 records.
+[2024-11-10T13:58:37.674+0000] {subprocess.py:93} INFO - 24/11/10 13:58:37 INFO SharedState: Setting hive.metastore.warehouse.dir ('null') to the value of spark.sql.warehouse.dir.
+[2024-11-10T13:58:37.676+0000] {subprocess.py:93} INFO - 24/11/10 13:58:37 INFO SharedState: Warehouse path is 'file:/tmp/***tmpbw93ilow/spark-warehouse'.
+[2024-11-10T13:58:39.600+0000] {subprocess.py:93} INFO - 24/11/10 13:58:39 INFO CodeGenerator: Code generated in 195.000881 ms
+[2024-11-10T13:58:39.660+0000] {subprocess.py:93} INFO - 24/11/10 13:58:39 INFO SparkContext: Starting job: showString at NativeMethodAccessorImpl.java:0
+[2024-11-10T13:58:39.677+0000] {subprocess.py:93} INFO - 24/11/10 13:58:39 INFO DAGScheduler: Got job 0 (showString at NativeMethodAccessorImpl.java:0) with 1 output partitions
+[2024-11-10T13:58:39.678+0000] {subprocess.py:93} INFO - 24/11/10 13:58:39 INFO DAGScheduler: Final stage: ResultStage 0 (showString at NativeMethodAccessorImpl.java:0)
+[2024-11-10T13:58:39.682+0000] {subprocess.py:93} INFO - 24/11/10 13:58:39 INFO DAGScheduler: Parents of final stage: List()
+[2024-11-10T13:58:39.683+0000] {subprocess.py:93} INFO - 24/11/10 13:58:39 INFO DAGScheduler: Missing parents: List()
+[2024-11-10T13:58:39.687+0000] {subprocess.py:93} INFO - 24/11/10 13:58:39 INFO DAGScheduler: Submitting ResultStage 0 (MapPartitionsRDD[6] at showString at NativeMethodAccessorImpl.java:0), which has no missing parents
+[2024-11-10T13:58:39.856+0000] {subprocess.py:93} INFO - 24/11/10 13:58:39 INFO MemoryStore: Block broadcast_0 stored as values in memory (estimated size 17.7 KiB, free 434.4 MiB)
+[2024-11-10T13:58:39.905+0000] {subprocess.py:93} INFO - 24/11/10 13:58:39 INFO MemoryStore: Block broadcast_0_piece0 stored as bytes in memory (estimated size 7.7 KiB, free 434.4 MiB)
+[2024-11-10T13:58:39.908+0000] {subprocess.py:93} INFO - 24/11/10 13:58:39 INFO BlockManagerInfo: Added broadcast_0_piece0 in memory on c64f0d2c37de:35069 (size: 7.7 KiB, free: 434.4 MiB)
+[2024-11-10T13:58:39.912+0000] {subprocess.py:93} INFO - 24/11/10 13:58:39 INFO SparkContext: Created broadcast 0 from broadcast at DAGScheduler.scala:1585
+[2024-11-10T13:58:39.931+0000] {subprocess.py:93} INFO - 24/11/10 13:58:39 INFO DAGScheduler: Submitting 1 missing tasks from ResultStage 0 (MapPartitionsRDD[6] at showString at NativeMethodAccessorImpl.java:0) (first 15 tasks are for partitions Vector(0))
+[2024-11-10T13:58:39.932+0000] {subprocess.py:93} INFO - 24/11/10 13:58:39 INFO TaskSchedulerImpl: Adding task set 0.0 with 1 tasks resource profile 0
+[2024-11-10T13:58:39.976+0000] {subprocess.py:93} INFO - 24/11/10 13:58:39 INFO TaskSetManager: Starting task 0.0 in stage 0.0 (TID 0) (c64f0d2c37de, executor driver, partition 0, PROCESS_LOCAL, 245979 bytes)
+[2024-11-10T13:58:39.988+0000] {subprocess.py:93} INFO - 24/11/10 13:58:39 INFO Executor: Running task 0.0 in stage 0.0 (TID 0)
+[2024-11-10T13:58:41.066+0000] {subprocess.py:93} INFO - 24/11/10 13:58:41 INFO CodeGenerator: Code generated in 25.929133 ms
+[2024-11-10T13:58:41.236+0000] {subprocess.py:93} INFO - 24/11/10 13:58:41 INFO Executor: Finished task 0.0 in stage 0.0 (TID 0). 6793 bytes result sent to driver
+[2024-11-10T13:58:41.244+0000] {subprocess.py:93} INFO - 24/11/10 13:58:41 INFO TaskSetManager: Finished task 0.0 in stage 0.0 (TID 0) in 1284 ms on c64f0d2c37de (executor driver) (1/1)
+[2024-11-10T13:58:41.245+0000] {subprocess.py:93} INFO - 24/11/10 13:58:41 INFO TaskSchedulerImpl: Removed TaskSet 0.0, whose tasks have all completed, from pool
+[2024-11-10T13:58:41.247+0000] {subprocess.py:93} INFO - 24/11/10 13:58:41 INFO PythonAccumulatorV2: Connected to AccumulatorServer at host: 127.0.0.1 port: 59031
+[2024-11-10T13:58:41.251+0000] {subprocess.py:93} INFO - 24/11/10 13:58:41 INFO DAGScheduler: ResultStage 0 (showString at NativeMethodAccessorImpl.java:0) finished in 1.539 s
+[2024-11-10T13:58:41.253+0000] {subprocess.py:93} INFO - 24/11/10 13:58:41 INFO DAGScheduler: Job 0 is finished. Cancelling potential speculative or zombie tasks for this job
+[2024-11-10T13:58:41.253+0000] {subprocess.py:93} INFO - 24/11/10 13:58:41 INFO TaskSchedulerImpl: Killing all running tasks in stage 0: Stage finished
+[2024-11-10T13:58:41.255+0000] {subprocess.py:93} INFO - 24/11/10 13:58:41 INFO DAGScheduler: Job 0 finished: showString at NativeMethodAccessorImpl.java:0, took 1.594504 s
+[2024-11-10T13:58:41.705+0000] {subprocess.py:93} INFO - 24/11/10 13:58:41 INFO BlockManagerInfo: Removed broadcast_0_piece0 on c64f0d2c37de:35069 in memory (size: 7.7 KiB, free: 434.4 MiB)
+[2024-11-10T13:58:42.004+0000] {subprocess.py:93} INFO - 24/11/10 13:58:42 INFO CodeGenerator: Code generated in 21.630177 ms
+[2024-11-10T13:58:42.021+0000] {subprocess.py:93} INFO - +------------------------------------+-------------------------------+------------+---------------------------+---------+---------+--------------+--------------+-----------+-------------+------------------+-----------------+------------+----------------------------------+-------------+---------------------------+
+[2024-11-10T13:58:42.021+0000] {subprocess.py:93} INFO - |id                                  |name                           |brewery_type|address_1                  |address_2|address_3|city          |state_province|postal_code|country      |longitude         |latitude         |phone       |website_url                       |state        |street                     |
+[2024-11-10T13:58:42.021+0000] {subprocess.py:93} INFO - +------------------------------------+-------------------------------+------------+---------------------------+---------+---------+--------------+--------------+-----------+-------------+------------------+-----------------+------------+----------------------------------+-------------+---------------------------+
+[2024-11-10T13:58:42.021+0000] {subprocess.py:93} INFO - |5128df48-79fc-4f0f-8b52-d06be54d0cec|(405) Brewing Co               |micro       |1716 Topeka St             |NULL     |NULL     |Norman        |Oklahoma      |73069-8224 |United States|-97.46818222      |35.25738891      |4058160490  |http://www.405brewing.com         |Oklahoma     |1716 Topeka St             |
+[2024-11-10T13:58:42.022+0000] {subprocess.py:93} INFO - |9c5a66c8-cc13-416f-a5d9-0a769c87d318|(512) Brewing Co               |micro       |407 Radam Ln Ste F200      |NULL     |NULL     |Austin        |Texas         |78745-1197 |United States|NULL              |NULL             |5129211545  |http://www.512brewing.com         |Texas        |407 Radam Ln Ste F200      |
+[2024-11-10T13:58:42.022+0000] {subprocess.py:93} INFO - |34e8c68b-6146-453f-a4b9-1f6cd99a5ada|1 of Us Brewing Company        |micro       |8100 Washington Ave        |NULL     |NULL     |Mount Pleasant|Wisconsin     |53406-3920 |United States|-87.88336350209435|42.72010826899558|2624847553  |https://www.1ofusbrewing.com      |Wisconsin    |8100 Washington Ave        |
+[2024-11-10T13:58:42.022+0000] {subprocess.py:93} INFO - |ef970757-fe42-416f-931d-722451f1f59c|10 Barrel Brewing Co           |large       |1501 E St                  |NULL     |NULL     |San Diego     |California    |92101-6618 |United States|-117.129593       |32.714813        |6195782311  |http://10barrel.com               |California   |1501 E St                  |
+[2024-11-10T13:58:42.022+0000] {subprocess.py:93} INFO - |6d14b220-8926-4521-8d19-b98a2d6ec3db|10 Barrel Brewing Co           |large       |62970 18th St              |NULL     |NULL     |Bend          |Oregon        |97701-9847 |United States|-121.281706       |44.08683531      |5415851007  |http://www.10barrel.com           |Oregon       |62970 18th St              |
+[2024-11-10T13:58:42.022+0000] {subprocess.py:93} INFO - |e2e78bd8-80ff-4a61-a65c-3bfbd9d76ce2|10 Barrel Brewing Co           |large       |1135 NW Galveston Ave Ste B|NULL     |NULL     |Bend          |Oregon        |97703-2465 |United States|-121.3288021      |44.0575649       |5415851007  |NULL                              |Oregon       |1135 NW Galveston Ave Ste B|
+[2024-11-10T13:58:42.022+0000] {subprocess.py:93} INFO - |e432899b-7f58-455f-9c7b-9a6e2130a1e0|10 Barrel Brewing Co           |large       |1411 NW Flanders St        |NULL     |NULL     |Portland      |Oregon        |97209-2620 |United States|-122.6855056      |45.5259786       |5032241700  |http://www.10barrel.com           |Oregon       |1411 NW Flanders St        |
+[2024-11-10T13:58:42.022+0000] {subprocess.py:93} INFO - |9f1852da-c312-42da-9a31-097bac81c4c0|10 Barrel Brewing Co - Bend Pub|large       |62950 NE 18th St           |NULL     |NULL     |Bend          |Oregon        |97701      |United States|-121.2809536      |44.0912109       |5415851007  |NULL                              |Oregon       |62950 NE 18th St           |
+[2024-11-10T13:58:42.023+0000] {subprocess.py:93} INFO - |ea4f30c0-bce6-416b-8904-fab4055a7362|10 Barrel Brewing Co - Boise   |large       |826 W Bannock St           |NULL     |NULL     |Boise         |Idaho         |83702-5857 |United States|-116.202929       |43.618516        |2083445870  |http://www.10barrel.com           |Idaho        |826 W Bannock St           |
+[2024-11-10T13:58:42.023+0000] {subprocess.py:93} INFO - |1988eb86-f0a2-4674-ba04-02454efa0d31|10 Barrel Brewing Co - Denver  |large       |2620 Walnut St             |NULL     |NULL     |Denver        |Colorado      |80205-2231 |United States|-104.9853655      |39.7592508       |7205738992  |NULL                              |Colorado     |2620 Walnut St             |
+[2024-11-10T13:58:42.023+0000] {subprocess.py:93} INFO - |1ecc330f-6275-42a5-b14e-00adbed62752|10 Torr Distilling and Brewing |micro       |490 Mill St                |NULL     |NULL     |Reno          |Nevada        |89502      |United States|-119.7732015      |39.5171702       |7755307014  |http://www.10torr.com             |Nevada       |490 Mill St                |
+[2024-11-10T13:58:42.023+0000] {subprocess.py:93} INFO - |7531dbd8-afc9-4b5b-95bc-7ece7f2c0bf3|10-56 Brewing Company          |micro       |400 Brown Cir              |NULL     |NULL     |Knox          |Indiana       |46534      |United States|-86.627954        |41.289715        |6308165790  |NULL                              |Indiana      |400 Brown Cir              |
+[2024-11-10T13:58:42.023+0000] {subprocess.py:93} INFO - |5ae467af-66dc-4d7f-8839-44228f89b596|101 North Brewing Company      |closed      |1304 Scott St Ste D        |NULL     |NULL     |Petaluma      |California    |94954-7100 |United States|-122.665055       |38.27029381      |7077534934  |http://www.101northbeer.com       |California   |1304 Scott St Ste D        |
+[2024-11-10T13:58:42.024+0000] {subprocess.py:93} INFO - |4ffda196-dd59-44a5-9eeb-5f7fd4b58f5a|105 West Brewing Co            |micro       |1043 Park St               |NULL     |NULL     |Castle Rock   |Colorado      |80109-1585 |United States|-104.8667206      |39.38269495      |3033257321  |http://www.105westbrewing.com     |Colorado     |1043 Park St               |
+[2024-11-10T13:58:42.024+0000] {subprocess.py:93} INFO - |42aa37d5-8384-4ffe-8c81-7c982eff0384|10K Brewing                    |micro       |2005 2nd Ave               |NULL     |NULL     |Anoka         |Minnesota     |55303-2243 |United States|-93.38952559      |45.19812039      |7633924753  |http://10KBrew.com                |Minnesota    |2005 2nd Ave               |
+[2024-11-10T13:58:42.024+0000] {subprocess.py:93} INFO - |232e8f62-9afc-45f5-b4bc-582c26b5c43b|10th District Brewing Company  |micro       |491 Washington St          |NULL     |NULL     |Abington      |Massachusetts |02351-2419 |United States|-70.94594149      |42.10591754      |7813071554  |http://www.10thdistrictbrewing.com|Massachusetts|491 Washington St          |
+[2024-11-10T13:58:42.024+0000] {subprocess.py:93} INFO - |08f78223-24f8-4b71-b381-ea19a5bd82df|11 Below Brewing Company       |micro       |6820 Bourgeois Rd          |NULL     |NULL     |Houston       |Texas         |77066-3107 |United States|-95.5186591       |29.9515464       |2814442337  |http://www.11belowbrewing.com     |Texas        |6820 Bourgeois Rd          |
+[2024-11-10T13:58:42.024+0000] {subprocess.py:93} INFO - |58293321-14ae-49d7-9a7b-08436c9e63a6|1188 Brewing Co                |brewpub     |141 E Main St              |NULL     |NULL     |John Day      |Oregon        |97845-1210 |United States|-118.9218754      |44.4146563       |5415751188  |http://www.1188brewing.com        |Oregon       |141 E Main St              |
+[2024-11-10T13:58:42.025+0000] {subprocess.py:93} INFO - |e5f3e72a-fee2-4813-82cf-f2e53b439ae6|12 Acres Brewing Company       |micro       |Unnamed Street             |Clonmore |NULL     |Killeshin     |Laois         |R93 X3X8   |Ireland      |-6.979343891      |52.84930763      |353599107299|https://12acresbrewing.ie/        |Laois        |Unnamed Street             |
+[2024-11-10T13:58:42.025+0000] {subprocess.py:93} INFO - |d81ff708-b5d2-478f-af6a-6d40f5beb9ac|12 Gates Brewing Company       |brewpub     |80 Earhart Dr Ste 20       |NULL     |NULL     |Williamsville |New York      |14221-7804 |United States|NULL              |NULL             |7169066600  |http://www.12gatesbrewing.com     |New York     |80 Earhart Dr Ste 20       |
+[2024-11-10T13:58:42.025+0000] {subprocess.py:93} INFO - +------------------------------------+-------------------------------+------------+---------------------------+---------+---------+--------------+--------------+-----------+-------------+------------------+-----------------+------------+----------------------------------+-------------+---------------------------+
+[2024-11-10T13:58:42.025+0000] {subprocess.py:93} INFO - only showing top 20 rows
+[2024-11-10T13:58:42.025+0000] {subprocess.py:93} INFO - 
+[2024-11-10T13:58:42.026+0000] {subprocess.py:93} INFO - 2024-11-10 13:58:42,025 - INFO - Request URL: 'https://blobinbevtestbr.blob.core.windows.net/bronze-inbev-test?restype=REDACTED&comp=REDACTED&prefix=REDACTED'
+[2024-11-10T13:58:42.026+0000] {subprocess.py:93} INFO - Request method: 'GET'
+[2024-11-10T13:58:42.026+0000] {subprocess.py:93} INFO - Request headers:
+[2024-11-10T13:58:42.026+0000] {subprocess.py:93} INFO -     'x-ms-version': 'REDACTED'
+[2024-11-10T13:58:42.026+0000] {subprocess.py:93} INFO -     'Accept': 'application/xml'
+[2024-11-10T13:58:42.026+0000] {subprocess.py:93} INFO -     'User-Agent': 'azsdk-python-storage-blob/12.22.0 Python/3.12.6 (Linux-6.10.13-3-MANJARO-x86_64-with-glibc2.36)'
+[2024-11-10T13:58:42.027+0000] {subprocess.py:93} INFO -     'x-ms-date': 'REDACTED'
+[2024-11-10T13:58:42.027+0000] {subprocess.py:93} INFO -     'x-ms-client-request-id': 'e4c58e8e-9f6b-11ef-965a-0242ac120007'
+[2024-11-10T13:58:42.027+0000] {subprocess.py:93} INFO -     'Authorization': 'REDACTED'
+[2024-11-10T13:58:42.027+0000] {subprocess.py:93} INFO - No body was attached to the request
+[2024-11-10T13:58:42.617+0000] {subprocess.py:93} INFO - 2024-11-10 13:58:42,617 - INFO - Response status: 200
+[2024-11-10T13:58:42.617+0000] {subprocess.py:93} INFO - Response headers:
+[2024-11-10T13:58:42.618+0000] {subprocess.py:93} INFO -     'Transfer-Encoding': 'chunked'
+[2024-11-10T13:58:42.618+0000] {subprocess.py:93} INFO -     'Content-Type': 'application/xml'
+[2024-11-10T13:58:42.618+0000] {subprocess.py:93} INFO -     'Server': 'Windows-Azure-Blob/1.0 Microsoft-HTTPAPI/2.0'
+[2024-11-10T13:58:42.618+0000] {subprocess.py:93} INFO -     'x-ms-request-id': '80d1487e-401e-002a-5b78-333a6a000000'
+[2024-11-10T13:58:42.618+0000] {subprocess.py:93} INFO -     'x-ms-client-request-id': 'e4c58e8e-9f6b-11ef-965a-0242ac120007'
+[2024-11-10T13:58:42.619+0000] {subprocess.py:93} INFO -     'x-ms-version': 'REDACTED'
+[2024-11-10T13:58:42.619+0000] {subprocess.py:93} INFO -     'Date': 'Sun, 10 Nov 2024 13:58:41 GMT'
+[2024-11-10T13:58:42.619+0000] {subprocess.py:93} INFO - Deleting blob: openbrewerydb/part-00000-36e620d7-6faf-41c2-9a87-9a0084074ee6-c000.snappy.parquet
+[2024-11-10T13:58:42.619+0000] {subprocess.py:93} INFO - 2024-11-10 13:58:42,618 - INFO - Request URL: 'https://blobinbevtestbr.blob.core.windows.net/bronze-inbev-test/openbrewerydb/part-00000-36e620d7-6faf-41c2-9a87-9a0084074ee6-c000.snappy.parquet'
+[2024-11-10T13:58:42.619+0000] {subprocess.py:93} INFO - Request method: 'DELETE'
+[2024-11-10T13:58:42.619+0000] {subprocess.py:93} INFO - Request headers:
+[2024-11-10T13:58:42.620+0000] {subprocess.py:93} INFO -     'x-ms-version': 'REDACTED'
+[2024-11-10T13:58:42.620+0000] {subprocess.py:93} INFO -     'Accept': 'application/xml'
+[2024-11-10T13:58:42.620+0000] {subprocess.py:93} INFO -     'User-Agent': 'azsdk-python-storage-blob/12.22.0 Python/3.12.6 (Linux-6.10.13-3-MANJARO-x86_64-with-glibc2.36)'
+[2024-11-10T13:58:42.620+0000] {subprocess.py:93} INFO -     'x-ms-date': 'REDACTED'
+[2024-11-10T13:58:42.620+0000] {subprocess.py:93} INFO -     'x-ms-client-request-id': 'e5203a0a-9f6b-11ef-965a-0242ac120007'
+[2024-11-10T13:58:42.621+0000] {subprocess.py:93} INFO -     'Authorization': 'REDACTED'
+[2024-11-10T13:58:42.621+0000] {subprocess.py:93} INFO - No body was attached to the request
+[2024-11-10T13:58:42.854+0000] {subprocess.py:93} INFO - 2024-11-10 13:58:42,853 - INFO - Response status: 202
+[2024-11-10T13:58:42.854+0000] {subprocess.py:93} INFO - Response headers:
+[2024-11-10T13:58:42.854+0000] {subprocess.py:93} INFO -     'Content-Length': '0'
+[2024-11-10T13:58:42.855+0000] {subprocess.py:93} INFO -     'Server': 'Windows-Azure-Blob/1.0 Microsoft-HTTPAPI/2.0'
+[2024-11-10T13:58:42.855+0000] {subprocess.py:93} INFO -     'x-ms-request-id': '80d148c3-401e-002a-1b78-333a6a000000'
+[2024-11-10T13:58:42.855+0000] {subprocess.py:93} INFO -     'x-ms-client-request-id': 'e5203a0a-9f6b-11ef-965a-0242ac120007'
+[2024-11-10T13:58:42.855+0000] {subprocess.py:93} INFO -     'x-ms-version': 'REDACTED'
+[2024-11-10T13:58:42.855+0000] {subprocess.py:93} INFO -     'x-ms-delete-type-permanent': 'REDACTED'
+[2024-11-10T13:58:42.855+0000] {subprocess.py:93} INFO -     'Date': 'Sun, 10 Nov 2024 13:58:41 GMT'
+[2024-11-10T13:58:42.856+0000] {subprocess.py:93} INFO - All blobs in folder 'openbrewerydb' have been deleted.
+[2024-11-10T13:58:42.856+0000] {subprocess.py:93} INFO - 2024-11-10 13:58:42,854 - INFO - Writing data to /opt/***/dags/temp/breweries.
+[2024-11-10T13:58:43.035+0000] {subprocess.py:93} INFO - 24/11/10 13:58:43 INFO ParquetUtils: Using default output committer for Parquet: org.apache.parquet.hadoop.ParquetOutputCommitter
+[2024-11-10T13:58:43.062+0000] {subprocess.py:93} INFO - 24/11/10 13:58:43 INFO FileOutputCommitter: File Output Committer Algorithm version is 1
+[2024-11-10T13:58:43.062+0000] {subprocess.py:93} INFO - 24/11/10 13:58:43 INFO FileOutputCommitter: FileOutputCommitter skip cleanup _temporary folders under output directory:false, ignore cleanup failures: false
+[2024-11-10T13:58:43.063+0000] {subprocess.py:93} INFO - 24/11/10 13:58:43 INFO SQLHadoopMapReduceCommitProtocol: Using user defined output committer class org.apache.parquet.hadoop.ParquetOutputCommitter
+[2024-11-10T13:58:43.063+0000] {subprocess.py:93} INFO - 24/11/10 13:58:43 INFO FileOutputCommitter: File Output Committer Algorithm version is 1
+[2024-11-10T13:58:43.063+0000] {subprocess.py:93} INFO - 24/11/10 13:58:43 INFO FileOutputCommitter: FileOutputCommitter skip cleanup _temporary folders under output directory:false, ignore cleanup failures: false
+[2024-11-10T13:58:43.063+0000] {subprocess.py:93} INFO - 24/11/10 13:58:43 INFO SQLHadoopMapReduceCommitProtocol: Using output committer class org.apache.parquet.hadoop.ParquetOutputCommitter
+[2024-11-10T13:58:43.099+0000] {subprocess.py:93} INFO - 24/11/10 13:58:43 INFO CodeGenerator: Code generated in 18.777734 ms
+[2024-11-10T13:58:43.124+0000] {subprocess.py:93} INFO - 24/11/10 13:58:43 INFO SparkContext: Starting job: parquet at NativeMethodAccessorImpl.java:0
+[2024-11-10T13:58:43.127+0000] {subprocess.py:93} INFO - 24/11/10 13:58:43 INFO DAGScheduler: Got job 1 (parquet at NativeMethodAccessorImpl.java:0) with 1 output partitions
+[2024-11-10T13:58:43.128+0000] {subprocess.py:93} INFO - 24/11/10 13:58:43 INFO DAGScheduler: Final stage: ResultStage 1 (parquet at NativeMethodAccessorImpl.java:0)
+[2024-11-10T13:58:43.128+0000] {subprocess.py:93} INFO - 24/11/10 13:58:43 INFO DAGScheduler: Parents of final stage: List()
+[2024-11-10T13:58:43.128+0000] {subprocess.py:93} INFO - 24/11/10 13:58:43 INFO DAGScheduler: Missing parents: List()
+[2024-11-10T13:58:43.131+0000] {subprocess.py:93} INFO - 24/11/10 13:58:43 INFO DAGScheduler: Submitting ResultStage 1 (MapPartitionsRDD[9] at parquet at NativeMethodAccessorImpl.java:0), which has no missing parents
+[2024-11-10T13:58:43.173+0000] {subprocess.py:93} INFO - 24/11/10 13:58:43 INFO MemoryStore: Block broadcast_1 stored as values in memory (estimated size 221.8 KiB, free 434.2 MiB)
+[2024-11-10T13:58:43.184+0000] {subprocess.py:93} INFO - 24/11/10 13:58:43 INFO MemoryStore: Block broadcast_1_piece0 stored as bytes in memory (estimated size 79.5 KiB, free 434.1 MiB)
+[2024-11-10T13:58:43.187+0000] {subprocess.py:93} INFO - 24/11/10 13:58:43 INFO BlockManagerInfo: Added broadcast_1_piece0 in memory on c64f0d2c37de:35069 (size: 79.5 KiB, free: 434.3 MiB)
+[2024-11-10T13:58:43.195+0000] {subprocess.py:93} INFO - 24/11/10 13:58:43 INFO SparkContext: Created broadcast 1 from broadcast at DAGScheduler.scala:1585
+[2024-11-10T13:58:43.195+0000] {subprocess.py:93} INFO - 24/11/10 13:58:43 INFO DAGScheduler: Submitting 1 missing tasks from ResultStage 1 (MapPartitionsRDD[9] at parquet at NativeMethodAccessorImpl.java:0) (first 15 tasks are for partitions Vector(0))
+[2024-11-10T13:58:43.196+0000] {subprocess.py:93} INFO - 24/11/10 13:58:43 INFO TaskSchedulerImpl: Adding task set 1.0 with 1 tasks resource profile 0
+[2024-11-10T13:58:43.199+0000] {subprocess.py:93} INFO - 24/11/10 13:58:43 WARN TaskSetManager: Stage 1 contains a task of very large size (1918 KiB). The maximum recommended task size is 1000 KiB.
+[2024-11-10T13:58:43.200+0000] {subprocess.py:93} INFO - 24/11/10 13:58:43 INFO TaskSetManager: Starting task 0.0 in stage 1.0 (TID 1) (c64f0d2c37de, executor driver, partition 0, PROCESS_LOCAL, 1964680 bytes)
+[2024-11-10T13:58:43.204+0000] {subprocess.py:93} INFO - 24/11/10 13:58:43 INFO Executor: Running task 0.0 in stage 1.0 (TID 1)
+[2024-11-10T13:58:43.274+0000] {subprocess.py:93} INFO - 24/11/10 13:58:43 INFO FileOutputCommitter: File Output Committer Algorithm version is 1
+[2024-11-10T13:58:43.276+0000] {subprocess.py:93} INFO - 24/11/10 13:58:43 INFO FileOutputCommitter: FileOutputCommitter skip cleanup _temporary folders under output directory:false, ignore cleanup failures: false
+[2024-11-10T13:58:43.276+0000] {subprocess.py:93} INFO - 24/11/10 13:58:43 INFO SQLHadoopMapReduceCommitProtocol: Using user defined output committer class org.apache.parquet.hadoop.ParquetOutputCommitter
+[2024-11-10T13:58:43.276+0000] {subprocess.py:93} INFO - 24/11/10 13:58:43 INFO FileOutputCommitter: File Output Committer Algorithm version is 1
+[2024-11-10T13:58:43.276+0000] {subprocess.py:93} INFO - 24/11/10 13:58:43 INFO FileOutputCommitter: FileOutputCommitter skip cleanup _temporary folders under output directory:false, ignore cleanup failures: false
+[2024-11-10T13:58:43.277+0000] {subprocess.py:93} INFO - 24/11/10 13:58:43 INFO SQLHadoopMapReduceCommitProtocol: Using output committer class org.apache.parquet.hadoop.ParquetOutputCommitter
+[2024-11-10T13:58:43.280+0000] {subprocess.py:93} INFO - 24/11/10 13:58:43 INFO CodecConfig: Compression: SNAPPY
+[2024-11-10T13:58:43.284+0000] {subprocess.py:93} INFO - 24/11/10 13:58:43 INFO CodecConfig: Compression: SNAPPY
+[2024-11-10T13:58:43.306+0000] {subprocess.py:93} INFO - 24/11/10 13:58:43 INFO ParquetOutputFormat: ParquetRecordWriter [block size: 134217728b, row group padding size: 8388608b, validating: false]
+[2024-11-10T13:58:43.328+0000] {subprocess.py:93} INFO - 24/11/10 13:58:43 INFO ParquetWriteSupport: Initialized Parquet WriteSupport with Catalyst schema:
+[2024-11-10T13:58:43.329+0000] {subprocess.py:93} INFO - {
+[2024-11-10T13:58:43.329+0000] {subprocess.py:93} INFO -   "type" : "struct",
+[2024-11-10T13:58:43.329+0000] {subprocess.py:93} INFO -   "fields" : [ {
+[2024-11-10T13:58:43.329+0000] {subprocess.py:93} INFO -     "name" : "id",
+[2024-11-10T13:58:43.329+0000] {subprocess.py:93} INFO -     "type" : "string",
+[2024-11-10T13:58:43.329+0000] {subprocess.py:93} INFO -     "nullable" : true,
+[2024-11-10T13:58:43.329+0000] {subprocess.py:93} INFO -     "metadata" : { }
+[2024-11-10T13:58:43.330+0000] {subprocess.py:93} INFO -   }, {
+[2024-11-10T13:58:43.330+0000] {subprocess.py:93} INFO -     "name" : "name",
+[2024-11-10T13:58:43.330+0000] {subprocess.py:93} INFO -     "type" : "string",
+[2024-11-10T13:58:43.330+0000] {subprocess.py:93} INFO -     "nullable" : true,
+[2024-11-10T13:58:43.330+0000] {subprocess.py:93} INFO -     "metadata" : { }
+[2024-11-10T13:58:43.330+0000] {subprocess.py:93} INFO -   }, {
+[2024-11-10T13:58:43.330+0000] {subprocess.py:93} INFO -     "name" : "brewery_type",
+[2024-11-10T13:58:43.331+0000] {subprocess.py:93} INFO -     "type" : "string",
+[2024-11-10T13:58:43.331+0000] {subprocess.py:93} INFO -     "nullable" : true,
+[2024-11-10T13:58:43.331+0000] {subprocess.py:93} INFO -     "metadata" : { }
+[2024-11-10T13:58:43.331+0000] {subprocess.py:93} INFO -   }, {
+[2024-11-10T13:58:43.331+0000] {subprocess.py:93} INFO -     "name" : "address_1",
+[2024-11-10T13:58:43.332+0000] {subprocess.py:93} INFO -     "type" : "string",
+[2024-11-10T13:58:43.332+0000] {subprocess.py:93} INFO -     "nullable" : true,
+[2024-11-10T13:58:43.332+0000] {subprocess.py:93} INFO -     "metadata" : { }
+[2024-11-10T13:58:43.332+0000] {subprocess.py:93} INFO -   }, {
+[2024-11-10T13:58:43.332+0000] {subprocess.py:93} INFO -     "name" : "address_2",
+[2024-11-10T13:58:43.333+0000] {subprocess.py:93} INFO -     "type" : "string",
+[2024-11-10T13:58:43.333+0000] {subprocess.py:93} INFO -     "nullable" : true,
+[2024-11-10T13:58:43.333+0000] {subprocess.py:93} INFO -     "metadata" : { }
+[2024-11-10T13:58:43.333+0000] {subprocess.py:93} INFO -   }, {
+[2024-11-10T13:58:43.334+0000] {subprocess.py:93} INFO -     "name" : "address_3",
+[2024-11-10T13:58:43.334+0000] {subprocess.py:93} INFO -     "type" : "string",
+[2024-11-10T13:58:43.334+0000] {subprocess.py:93} INFO -     "nullable" : true,
+[2024-11-10T13:58:43.334+0000] {subprocess.py:93} INFO -     "metadata" : { }
+[2024-11-10T13:58:43.334+0000] {subprocess.py:93} INFO -   }, {
+[2024-11-10T13:58:43.335+0000] {subprocess.py:93} INFO -     "name" : "city",
+[2024-11-10T13:58:43.335+0000] {subprocess.py:93} INFO -     "type" : "string",
+[2024-11-10T13:58:43.335+0000] {subprocess.py:93} INFO -     "nullable" : true,
+[2024-11-10T13:58:43.335+0000] {subprocess.py:93} INFO -     "metadata" : { }
+[2024-11-10T13:58:43.335+0000] {subprocess.py:93} INFO -   }, {
+[2024-11-10T13:58:43.336+0000] {subprocess.py:93} INFO -     "name" : "state_province",
+[2024-11-10T13:58:43.336+0000] {subprocess.py:93} INFO -     "type" : "string",
+[2024-11-10T13:58:43.336+0000] {subprocess.py:93} INFO -     "nullable" : true,
+[2024-11-10T13:58:43.336+0000] {subprocess.py:93} INFO -     "metadata" : { }
+[2024-11-10T13:58:43.336+0000] {subprocess.py:93} INFO -   }, {
+[2024-11-10T13:58:43.336+0000] {subprocess.py:93} INFO -     "name" : "postal_code",
+[2024-11-10T13:58:43.337+0000] {subprocess.py:93} INFO -     "type" : "string",
+[2024-11-10T13:58:43.337+0000] {subprocess.py:93} INFO -     "nullable" : true,
+[2024-11-10T13:58:43.337+0000] {subprocess.py:93} INFO -     "metadata" : { }
+[2024-11-10T13:58:43.337+0000] {subprocess.py:93} INFO -   }, {
+[2024-11-10T13:58:43.337+0000] {subprocess.py:93} INFO -     "name" : "country",
+[2024-11-10T13:58:43.337+0000] {subprocess.py:93} INFO -     "type" : "string",
+[2024-11-10T13:58:43.338+0000] {subprocess.py:93} INFO -     "nullable" : true,
+[2024-11-10T13:58:43.338+0000] {subprocess.py:93} INFO -     "metadata" : { }
+[2024-11-10T13:58:43.338+0000] {subprocess.py:93} INFO -   }, {
+[2024-11-10T13:58:43.338+0000] {subprocess.py:93} INFO -     "name" : "longitude",
+[2024-11-10T13:58:43.338+0000] {subprocess.py:93} INFO -     "type" : "double",
+[2024-11-10T13:58:43.339+0000] {subprocess.py:93} INFO -     "nullable" : true,
+[2024-11-10T13:58:43.339+0000] {subprocess.py:93} INFO -     "metadata" : { }
+[2024-11-10T13:58:43.339+0000] {subprocess.py:93} INFO -   }, {
+[2024-11-10T13:58:43.339+0000] {subprocess.py:93} INFO -     "name" : "latitude",
+[2024-11-10T13:58:43.339+0000] {subprocess.py:93} INFO -     "type" : "double",
+[2024-11-10T13:58:43.340+0000] {subprocess.py:93} INFO -     "nullable" : true,
+[2024-11-10T13:58:43.340+0000] {subprocess.py:93} INFO -     "metadata" : { }
+[2024-11-10T13:58:43.340+0000] {subprocess.py:93} INFO -   }, {
+[2024-11-10T13:58:43.340+0000] {subprocess.py:93} INFO -     "name" : "phone",
+[2024-11-10T13:58:43.340+0000] {subprocess.py:93} INFO -     "type" : "string",
+[2024-11-10T13:58:43.340+0000] {subprocess.py:93} INFO -     "nullable" : true,
+[2024-11-10T13:58:43.341+0000] {subprocess.py:93} INFO -     "metadata" : { }
+[2024-11-10T13:58:43.341+0000] {subprocess.py:93} INFO -   }, {
+[2024-11-10T13:58:43.341+0000] {subprocess.py:93} INFO -     "name" : "website_url",
+[2024-11-10T13:58:43.341+0000] {subprocess.py:93} INFO -     "type" : "string",
+[2024-11-10T13:58:43.342+0000] {subprocess.py:93} INFO -     "nullable" : true,
+[2024-11-10T13:58:43.342+0000] {subprocess.py:93} INFO -     "metadata" : { }
+[2024-11-10T13:58:43.342+0000] {subprocess.py:93} INFO -   }, {
+[2024-11-10T13:58:43.342+0000] {subprocess.py:93} INFO -     "name" : "state",
+[2024-11-10T13:58:43.342+0000] {subprocess.py:93} INFO -     "type" : "string",
+[2024-11-10T13:58:43.343+0000] {subprocess.py:93} INFO -     "nullable" : true,
+[2024-11-10T13:58:43.343+0000] {subprocess.py:93} INFO -     "metadata" : { }
+[2024-11-10T13:58:43.343+0000] {subprocess.py:93} INFO -   }, {
+[2024-11-10T13:58:43.343+0000] {subprocess.py:93} INFO -     "name" : "street",
+[2024-11-10T13:58:43.343+0000] {subprocess.py:93} INFO -     "type" : "string",
+[2024-11-10T13:58:43.343+0000] {subprocess.py:93} INFO -     "nullable" : true,
+[2024-11-10T13:58:43.344+0000] {subprocess.py:93} INFO -     "metadata" : { }
+[2024-11-10T13:58:43.344+0000] {subprocess.py:93} INFO -   } ]
+[2024-11-10T13:58:43.344+0000] {subprocess.py:93} INFO - }
+[2024-11-10T13:58:43.344+0000] {subprocess.py:93} INFO - and corresponding Parquet message type:
+[2024-11-10T13:58:43.344+0000] {subprocess.py:93} INFO - message spark_schema {
+[2024-11-10T13:58:43.345+0000] {subprocess.py:93} INFO -   optional binary id (STRING);
+[2024-11-10T13:58:43.345+0000] {subprocess.py:93} INFO -   optional binary name (STRING);
+[2024-11-10T13:58:43.345+0000] {subprocess.py:93} INFO -   optional binary brewery_type (STRING);
+[2024-11-10T13:58:43.345+0000] {subprocess.py:93} INFO -   optional binary address_1 (STRING);
+[2024-11-10T13:58:43.345+0000] {subprocess.py:93} INFO -   optional binary address_2 (STRING);
+[2024-11-10T13:58:43.345+0000] {subprocess.py:93} INFO -   optional binary address_3 (STRING);
+[2024-11-10T13:58:43.346+0000] {subprocess.py:93} INFO -   optional binary city (STRING);
+[2024-11-10T13:58:43.346+0000] {subprocess.py:93} INFO -   optional binary state_province (STRING);
+[2024-11-10T13:58:43.346+0000] {subprocess.py:93} INFO -   optional binary postal_code (STRING);
+[2024-11-10T13:58:43.346+0000] {subprocess.py:93} INFO -   optional binary country (STRING);
+[2024-11-10T13:58:43.346+0000] {subprocess.py:93} INFO -   optional double longitude;
+[2024-11-10T13:58:43.346+0000] {subprocess.py:93} INFO -   optional double latitude;
+[2024-11-10T13:58:43.347+0000] {subprocess.py:93} INFO -   optional binary phone (STRING);
+[2024-11-10T13:58:43.347+0000] {subprocess.py:93} INFO -   optional binary website_url (STRING);
+[2024-11-10T13:58:43.347+0000] {subprocess.py:93} INFO -   optional binary state (STRING);
+[2024-11-10T13:58:43.347+0000] {subprocess.py:93} INFO -   optional binary street (STRING);
+[2024-11-10T13:58:43.347+0000] {subprocess.py:93} INFO - }
+[2024-11-10T13:58:43.348+0000] {subprocess.py:93} INFO - 
+[2024-11-10T13:58:43.348+0000] {subprocess.py:93} INFO - 
+[2024-11-10T13:58:43.398+0000] {subprocess.py:93} INFO - 24/11/10 13:58:43 INFO CodecPool: Got brand-new compressor [.snappy]
+[2024-11-10T13:58:43.592+0000] {subprocess.py:93} INFO - 24/11/10 13:58:43 INFO CodeGenerator: Code generated in 20.951485 ms
+[2024-11-10T13:58:43.847+0000] {subprocess.py:93} INFO - 24/11/10 13:58:43 INFO PythonRunner: Times: total = 187, boot = 3, init = 177, finish = 7
+[2024-11-10T13:58:43.982+0000] {subprocess.py:93} INFO - 24/11/10 13:58:43 INFO PythonRunner: Times: total = 95, boot = -74, init = 162, finish = 7
+[2024-11-10T13:58:44.132+0000] {subprocess.py:93} INFO - 24/11/10 13:58:44 INFO PythonRunner: Times: total = 127, boot = -12, init = 131, finish = 8
+[2024-11-10T13:58:44.266+0000] {subprocess.py:93} INFO - 24/11/10 13:58:44 INFO PythonRunner: Times: total = 109, boot = 1, init = 103, finish = 5
+[2024-11-10T13:58:44.358+0000] {subprocess.py:93} INFO - 24/11/10 13:58:44 INFO PythonRunner: Times: total = 76, boot = -6, init = 77, finish = 5
+[2024-11-10T13:58:44.490+0000] {subprocess.py:93} INFO - 24/11/10 13:58:44 INFO PythonRunner: Times: total = 111, boot = 5, init = 100, finish = 6
+[2024-11-10T13:58:44.635+0000] {subprocess.py:93} INFO - 24/11/10 13:58:44 INFO PythonRunner: Times: total = 121, boot = -2, init = 113, finish = 10
+[2024-11-10T13:58:44.738+0000] {subprocess.py:93} INFO - 24/11/10 13:58:44 INFO PythonRunner: Times: total = 87, boot = 7, init = 75, finish = 5
+[2024-11-10T13:58:45.060+0000] {subprocess.py:93} INFO - 24/11/10 13:58:45 INFO FileOutputCommitter: Saved output of task 'attempt_202411101358438676658987998664362_0001_m_000000_1' to file:/opt/***/dags/temp/breweries/_temporary/0/task_202411101358438676658987998664362_0001_m_000000
+[2024-11-10T13:58:45.061+0000] {subprocess.py:93} INFO - 24/11/10 13:58:45 INFO SparkHadoopMapRedUtil: attempt_202411101358438676658987998664362_0001_m_000000_1: Committed. Elapsed time: 1 ms.
+[2024-11-10T13:58:45.069+0000] {subprocess.py:93} INFO - 24/11/10 13:58:45 INFO Executor: Finished task 0.0 in stage 1.0 (TID 1). 2961 bytes result sent to driver
+[2024-11-10T13:58:45.071+0000] {subprocess.py:93} INFO - 24/11/10 13:58:45 INFO TaskSetManager: Finished task 0.0 in stage 1.0 (TID 1) in 1879 ms on c64f0d2c37de (executor driver) (1/1)
+[2024-11-10T13:58:45.072+0000] {subprocess.py:93} INFO - 24/11/10 13:58:45 INFO TaskSchedulerImpl: Removed TaskSet 1.0, whose tasks have all completed, from pool
+[2024-11-10T13:58:45.074+0000] {subprocess.py:93} INFO - 24/11/10 13:58:45 INFO DAGScheduler: ResultStage 1 (parquet at NativeMethodAccessorImpl.java:0) finished in 1.942 s
+[2024-11-10T13:58:45.074+0000] {subprocess.py:93} INFO - 24/11/10 13:58:45 INFO DAGScheduler: Job 1 is finished. Cancelling potential speculative or zombie tasks for this job
+[2024-11-10T13:58:45.075+0000] {subprocess.py:93} INFO - 24/11/10 13:58:45 INFO TaskSchedulerImpl: Killing all running tasks in stage 1: Stage finished
+[2024-11-10T13:58:45.075+0000] {subprocess.py:93} INFO - 24/11/10 13:58:45 INFO DAGScheduler: Job 1 finished: parquet at NativeMethodAccessorImpl.java:0, took 1.950957 s
+[2024-11-10T13:58:45.077+0000] {subprocess.py:93} INFO - 24/11/10 13:58:45 INFO FileFormatWriter: Start to commit write Job 4695334e-3e4e-4eb1-a0c8-964373ddec40.
+[2024-11-10T13:58:45.091+0000] {subprocess.py:93} INFO - 24/11/10 13:58:45 INFO FileFormatWriter: Write Job 4695334e-3e4e-4eb1-a0c8-964373ddec40 committed. Elapsed time: 13 ms.
+[2024-11-10T13:58:45.094+0000] {subprocess.py:93} INFO - 24/11/10 13:58:45 INFO FileFormatWriter: Finished processing stats for write job 4695334e-3e4e-4eb1-a0c8-964373ddec40.
+[2024-11-10T13:58:45.100+0000] {subprocess.py:93} INFO - 2024-11-10 13:58:45,099 - INFO - Uploading data to Azure Blob Storage.
+[2024-11-10T13:58:45.101+0000] {subprocess.py:93} INFO - 2024-11-10 13:58:45,101 - INFO - Request URL: 'https://blobinbevtestbr.blob.core.windows.net/bronze-inbev-test?restype=REDACTED'
+[2024-11-10T13:58:45.102+0000] {subprocess.py:93} INFO - Request method: 'GET'
+[2024-11-10T13:58:45.102+0000] {subprocess.py:93} INFO - Request headers:
+[2024-11-10T13:58:45.102+0000] {subprocess.py:93} INFO -     'x-ms-version': 'REDACTED'
+[2024-11-10T13:58:45.103+0000] {subprocess.py:93} INFO -     'Accept': 'application/xml'
+[2024-11-10T13:58:45.103+0000] {subprocess.py:93} INFO -     'User-Agent': 'azsdk-python-storage-blob/12.22.0 Python/3.12.6 (Linux-6.10.13-3-MANJARO-x86_64-with-glibc2.36)'
+[2024-11-10T13:58:45.103+0000] {subprocess.py:93} INFO -     'x-ms-date': 'REDACTED'
+[2024-11-10T13:58:45.103+0000] {subprocess.py:93} INFO -     'x-ms-client-request-id': 'e69b153a-9f6b-11ef-965a-0242ac120007'
+[2024-11-10T13:58:45.103+0000] {subprocess.py:93} INFO -     'Authorization': 'REDACTED'
+[2024-11-10T13:58:45.103+0000] {subprocess.py:93} INFO - No body was attached to the request
+[2024-11-10T13:58:45.887+0000] {subprocess.py:93} INFO - 2024-11-10 13:58:45,887 - INFO - Response status: 200
+[2024-11-10T13:58:45.887+0000] {subprocess.py:93} INFO - Response headers:
+[2024-11-10T13:58:45.888+0000] {subprocess.py:93} INFO -     'Content-Length': '0'
+[2024-11-10T13:58:45.888+0000] {subprocess.py:93} INFO -     'Last-Modified': 'Tue, 05 Nov 2024 21:14:08 GMT'
+[2024-11-10T13:58:45.888+0000] {subprocess.py:93} INFO -     'ETag': '"0x8DCFDDEC9BE593D"'
+[2024-11-10T13:58:45.888+0000] {subprocess.py:93} INFO -     'Server': 'Windows-Azure-Blob/1.0 Microsoft-HTTPAPI/2.0'
+[2024-11-10T13:58:45.889+0000] {subprocess.py:93} INFO -     'x-ms-request-id': '7a8d7369-501e-00fd-6e78-336b5f000000'
+[2024-11-10T13:58:45.889+0000] {subprocess.py:93} INFO -     'x-ms-client-request-id': 'e69b153a-9f6b-11ef-965a-0242ac120007'
+[2024-11-10T13:58:45.889+0000] {subprocess.py:93} INFO -     'x-ms-version': 'REDACTED'
+[2024-11-10T13:58:45.889+0000] {subprocess.py:93} INFO -     'x-ms-meta-hdi_version': 'REDACTED'
+[2024-11-10T13:58:45.889+0000] {subprocess.py:93} INFO -     'x-ms-lease-status': 'REDACTED'
+[2024-11-10T13:58:45.890+0000] {subprocess.py:93} INFO -     'x-ms-lease-state': 'REDACTED'
+[2024-11-10T13:58:45.890+0000] {subprocess.py:93} INFO -     'x-ms-has-immutability-policy': 'REDACTED'
+[2024-11-10T13:58:45.890+0000] {subprocess.py:93} INFO -     'x-ms-has-legal-hold': 'REDACTED'
+[2024-11-10T13:58:45.890+0000] {subprocess.py:93} INFO -     'x-ms-immutable-storage-with-versioning-enabled': 'REDACTED'
+[2024-11-10T13:58:45.890+0000] {subprocess.py:93} INFO -     'x-ms-default-encryption-scope': 'REDACTED'
+[2024-11-10T13:58:45.890+0000] {subprocess.py:93} INFO -     'x-ms-deny-encryption-scope-override': 'REDACTED'
+[2024-11-10T13:58:45.891+0000] {subprocess.py:93} INFO -     'Date': 'Sun, 10 Nov 2024 13:58:44 GMT'
+[2024-11-10T13:58:45.891+0000] {subprocess.py:93} INFO - 2024-11-10 13:58:45,889 - INFO - Request URL: 'https://blobinbevtestbr.blob.core.windows.net/bronze-inbev-test/openbrewerydb/part-00000-3b675563-b5f6-4100-bf7a-4be87fa53e6f-c000.snappy.parquet'
+[2024-11-10T13:58:45.891+0000] {subprocess.py:93} INFO - Request method: 'PUT'
+[2024-11-10T13:58:45.891+0000] {subprocess.py:93} INFO - Request headers:
+[2024-11-10T13:58:45.891+0000] {subprocess.py:93} INFO -     'Content-Length': '1042740'
+[2024-11-10T13:58:45.891+0000] {subprocess.py:93} INFO -     'x-ms-blob-type': 'REDACTED'
+[2024-11-10T13:58:45.891+0000] {subprocess.py:93} INFO -     'x-ms-version': 'REDACTED'
+[2024-11-10T13:58:45.891+0000] {subprocess.py:93} INFO -     'Content-Type': 'application/octet-stream'
+[2024-11-10T13:58:45.891+0000] {subprocess.py:93} INFO -     'Accept': 'application/xml'
+[2024-11-10T13:58:45.891+0000] {subprocess.py:93} INFO -     'User-Agent': 'azsdk-python-storage-blob/12.22.0 Python/3.12.6 (Linux-6.10.13-3-MANJARO-x86_64-with-glibc2.36)'
+[2024-11-10T13:58:45.892+0000] {subprocess.py:93} INFO -     'x-ms-date': 'REDACTED'
+[2024-11-10T13:58:45.892+0000] {subprocess.py:93} INFO -     'x-ms-client-request-id': 'e713392a-9f6b-11ef-965a-0242ac120007'
+[2024-11-10T13:58:45.892+0000] {subprocess.py:93} INFO -     'Authorization': 'REDACTED'
+[2024-11-10T13:58:45.892+0000] {subprocess.py:93} INFO - A body is sent with the request
+[2024-11-10T13:58:47.588+0000] {subprocess.py:93} INFO - 2024-11-10 13:58:47,588 - INFO - Response status: 201
+[2024-11-10T13:58:47.589+0000] {subprocess.py:93} INFO - Response headers:
+[2024-11-10T13:58:47.589+0000] {subprocess.py:93} INFO -     'Content-Length': '0'
+[2024-11-10T13:58:47.589+0000] {subprocess.py:93} INFO -     'Content-MD5': 'REDACTED'
+[2024-11-10T13:58:47.590+0000] {subprocess.py:93} INFO -     'Last-Modified': 'Sun, 10 Nov 2024 13:58:47 GMT'
+[2024-11-10T13:58:47.590+0000] {subprocess.py:93} INFO -     'ETag': '"0x8DD018FCC42BCC2"'
+[2024-11-10T13:58:47.590+0000] {subprocess.py:93} INFO -     'Server': 'Windows-Azure-Blob/1.0 Microsoft-HTTPAPI/2.0'
+[2024-11-10T13:58:47.590+0000] {subprocess.py:93} INFO -     'x-ms-request-id': '7a8d7405-501e-00fd-7c78-336b5f000000'
+[2024-11-10T13:58:47.590+0000] {subprocess.py:93} INFO -     'x-ms-client-request-id': 'e713392a-9f6b-11ef-965a-0242ac120007'
+[2024-11-10T13:58:47.591+0000] {subprocess.py:93} INFO -     'x-ms-version': 'REDACTED'
+[2024-11-10T13:58:47.591+0000] {subprocess.py:93} INFO -     'x-ms-content-crc64': 'REDACTED'
+[2024-11-10T13:58:47.591+0000] {subprocess.py:93} INFO -     'x-ms-request-server-encrypted': 'REDACTED'
+[2024-11-10T13:58:47.591+0000] {subprocess.py:93} INFO -     'Date': 'Sun, 10 Nov 2024 13:58:46 GMT'
+[2024-11-10T13:58:47.591+0000] {subprocess.py:93} INFO - Uploaded '/opt/***/dags/temp/breweries/part-00000-3b675563-b5f6-4100-bf7a-4be87fa53e6f-c000.snappy.parquet' to 'openbrewerydb/part-00000-3b675563-b5f6-4100-bf7a-4be87fa53e6f-c000.snappy.parquet' in Azure Blob Storage.
+[2024-11-10T13:58:47.591+0000] {subprocess.py:93} INFO - 2024-11-10 13:58:47,589 - INFO - Cleaning up temporary files.
+[2024-11-10T13:58:47.591+0000] {subprocess.py:93} INFO - Folder '/opt/***/dags/temp/breweries' and its contents have been deleted.
+[2024-11-10T13:58:47.591+0000] {subprocess.py:93} INFO - 24/11/10 13:58:47 INFO SparkContext: SparkContext is stopping with exitCode 0.
+[2024-11-10T13:58:47.599+0000] {subprocess.py:93} INFO - 24/11/10 13:58:47 INFO SparkUI: Stopped Spark web UI at http://c64f0d2c37de:4040
+[2024-11-10T13:58:47.606+0000] {subprocess.py:93} INFO - 24/11/10 13:58:47 INFO MapOutputTrackerMasterEndpoint: MapOutputTrackerMasterEndpoint stopped!
+[2024-11-10T13:58:47.616+0000] {subprocess.py:93} INFO - 24/11/10 13:58:47 INFO MemoryStore: MemoryStore cleared
+[2024-11-10T13:58:47.617+0000] {subprocess.py:93} INFO - 24/11/10 13:58:47 INFO BlockManager: BlockManager stopped
+[2024-11-10T13:58:47.619+0000] {subprocess.py:93} INFO - 24/11/10 13:58:47 INFO BlockManagerMaster: BlockManagerMaster stopped
+[2024-11-10T13:58:47.621+0000] {subprocess.py:93} INFO - 24/11/10 13:58:47 INFO OutputCommitCoordinator$OutputCommitCoordinatorEndpoint: OutputCommitCoordinator stopped!
+[2024-11-10T13:58:47.628+0000] {subprocess.py:93} INFO - 24/11/10 13:58:47 INFO SparkContext: Successfully stopped SparkContext
+[2024-11-10T13:58:48.077+0000] {subprocess.py:93} INFO - 2024-11-10 13:58:48,077 - INFO - Pipeline execution completed.
+[2024-11-10T13:58:48.080+0000] {subprocess.py:93} INFO - 2024-11-10 13:58:48,080 - INFO - Closing down clientserver connection
+[2024-11-10T13:58:48.283+0000] {subprocess.py:93} INFO - 24/11/10 13:58:48 INFO ShutdownHookManager: Shutdown hook called
+[2024-11-10T13:58:48.284+0000] {subprocess.py:93} INFO - 24/11/10 13:58:48 INFO ShutdownHookManager: Deleting directory /tmp/spark-66492b79-75a4-44e4-bbd9-688a3fddaea8
+[2024-11-10T13:58:48.287+0000] {subprocess.py:93} INFO - 24/11/10 13:58:48 INFO ShutdownHookManager: Deleting directory /tmp/spark-6894df68-d9dc-49f8-bcb3-9182f620b221
+[2024-11-10T13:58:48.289+0000] {subprocess.py:93} INFO - 24/11/10 13:58:48 INFO ShutdownHookManager: Deleting directory /tmp/spark-66492b79-75a4-44e4-bbd9-688a3fddaea8/pyspark-2e6b7cef-1e26-4b20-a74a-eaf34825c2f9
+[2024-11-10T13:58:48.318+0000] {subprocess.py:97} INFO - Command exited with return code 0
+[2024-11-10T13:58:48.338+0000] {taskinstance.py:340} INFO - ::group::Post task execution logs
+[2024-11-10T13:58:48.338+0000] {taskinstance.py:352} INFO - Marking task as SUCCESS. dag_id=openbrewerydb_dag, task_id=spark_submit_bronze_job, run_id=manual__2024-11-10T13:57:14.987733+00:00, execution_date=20241110T135714, start_date=20241110T135716, end_date=20241110T135848
+[2024-11-10T13:58:48.373+0000] {local_task_job_runner.py:266} INFO - Task exited with return code 0
+[2024-11-10T13:58:48.394+0000] {taskinstance.py:3900} INFO - 1 downstream tasks scheduled from follow-on schedule check
+[2024-11-10T13:58:48.395+0000] {local_task_job_runner.py:245} INFO - ::endgroup::

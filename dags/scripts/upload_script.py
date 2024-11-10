@@ -3,7 +3,8 @@ import os
 
 def upload_files(directory_path, account_name, storage_account_key, container_name, folder_in_container, prefix="part"):
     """
-    Uploads all files from a specified directory that start with a given prefix (default is "part") to a specified folder within Azure Blob Storage.
+    Uploads all files from a specified directory and its first-level subdirectories
+    that start with a given prefix (default is "part") to a specified folder within Azure Blob Storage.
     
     Parameters:
     - directory_path (str): Path to the local directory containing files to upload.
@@ -25,22 +26,26 @@ def upload_files(directory_path, account_name, storage_account_key, container_na
     if not container_client.exists():
         container_client.create_container()
     
-    # Loop through all files in the specified directory that start with the prefix
-    for file_name in os.listdir(directory_path):
-        if file_name.startswith(prefix):
-            file_path = os.path.join(directory_path, file_name)
-            
-            # Define the blob path with the specified folder
-            blob_path = f"{folder_in_container}/{file_name}"
-            
-            # Create a BlobClient for each file
-            blob_client = container_client.get_blob_client(blob_path)
-            
-            # Upload the file
-            with open(file_path, "rb") as data:
-                blob_client.upload_blob(data, overwrite=True)
-            
-            print(f"Uploaded '{file_name}' to '{blob_path}' in Azure Blob Storage.")
+    # Traverse the directory path up to a depth of 2
+    for root, _, files in os.walk(directory_path):
+        # Check if we are in depth 2
+        if root[len(directory_path):].count(os.sep) < 2:
+            for file_name in files:
+                if file_name.startswith(prefix):
+                    file_path = os.path.join(root, file_name)
+                    
+                    # Define the blob path with the specified folder and relative path
+                    relative_path = os.path.relpath(file_path, directory_path)
+                    blob_path = f"{folder_in_container}/{relative_path}"
+                    
+                    # # Create a BlobClient for each file
+                    blob_client = container_client.get_blob_client(blob_path)
+                    
+                    # Upload the file
+                    with open(file_path, "rb") as data:
+                        blob_client.upload_blob(data, overwrite=True)
+                    
+                    print(f"Uploaded '{file_path}' to '{blob_path}' in Azure Blob Storage.")
 
 # Usage example:
 # upload_files(

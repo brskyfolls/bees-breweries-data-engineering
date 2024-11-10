@@ -4,6 +4,7 @@ from pyspark.sql.functions import col, filter
 def read_parquet_from_azure(storage_account_name, container_name, folder_path, account_key):
     """
     Reads all Parquet files from a specified Azure Blob Storage container into a PySpark DataFrame.
+    It also includes partition columns in the DataFrame if the Parquet files are partitioned.
 
     :param storage_account_name: Azure storage account name.
     :param container_name: Azure Blob Storage container name.
@@ -18,11 +19,11 @@ def read_parquet_from_azure(storage_account_name, container_name, folder_path, a
         .config(f"spark.hadoop.fs.azure.account.key.{storage_account_name}.blob.core.windows.net", account_key) \
         .getOrCreate()
 
-    # Define the file URL to access all Parquet files in the folder
-    file_url = f"wasbs://{container_name}@{storage_account_name}.blob.core.windows.net/{folder_path}/*.parquet"
-
-    # Load all Parquet files from the folder into a DataFrame
-    df = spark.read.parquet(file_url)
+    # Define the base path URL for partitioned Parquet files
+    base_path = f"wasbs://{container_name}@{storage_account_name}.blob.core.windows.net/{folder_path}"
+    
+    # Load all Parquet files from the folder into a DataFrame with partition columns
+    df = spark.read.option("basePath", base_path).parquet(base_path)
 
     return df, spark
 

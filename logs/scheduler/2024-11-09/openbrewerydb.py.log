@@ -1,0 +1,468 @@
+[2024-11-09T22:25:38.499+0000] {processor.py:186} INFO - Started process (PID=87344) to work on /opt/airflow/dags/openbrewerydb.py
+[2024-11-09T22:25:38.500+0000] {processor.py:914} INFO - Processing file /opt/airflow/dags/openbrewerydb.py for tasks to queue
+[2024-11-09T22:25:38.501+0000] {logging_mixin.py:190} INFO - [2024-11-09T22:25:38.501+0000] {dagbag.py:588} INFO - Filling up the DagBag from /opt/airflow/dags/openbrewerydb.py
+[2024-11-09T22:25:38.506+0000] {logging_mixin.py:190} INFO - [2024-11-09T22:25:38.503+0000] {dagbag.py:387} ERROR - Failed to import: /opt/airflow/dags/openbrewerydb.py
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/models/dagbag.py", line 383, in parse
+    loader.exec_module(new_module)
+  File "<frozen importlib._bootstrap_external>", line 995, in exec_module
+  File "<frozen importlib._bootstrap>", line 488, in _call_with_frames_removed
+  File "/opt/airflow/dags/openbrewerydb.py", line 22, in <module>
+    spark_submit_task = SparkSubmitOperator(
+                        ^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/models/baseoperator.py", line 490, in apply_defaults
+    result = func(self, **kwargs, default_args=default_args)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/providers/apache/spark/operators/spark_submit.py", line 139, in __init__
+    super().__init__(**kwargs)
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/models/baseoperator.py", line 490, in apply_defaults
+    result = func(self, **kwargs, default_args=default_args)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/models/baseoperator.py", line 938, in __init__
+    raise AirflowException(
+airflow.exceptions.AirflowException: Invalid arguments were passed to SparkSubmitOperator (task_id: spark_submit_job). Invalid arguments were:
+**kwargs: {'master': 'spark://spark-master:7077'}
+[2024-11-09T22:25:38.506+0000] {processor.py:927} WARNING - No viable dags retrieved from /opt/airflow/dags/openbrewerydb.py
+[2024-11-09T22:25:38.518+0000] {processor.py:208} INFO - Processing /opt/airflow/dags/openbrewerydb.py took 0.024 seconds
+[2024-11-09T22:26:09.037+0000] {processor.py:186} INFO - Started process (PID=87524) to work on /opt/airflow/dags/openbrewerydb.py
+[2024-11-09T22:26:09.038+0000] {processor.py:914} INFO - Processing file /opt/airflow/dags/openbrewerydb.py for tasks to queue
+[2024-11-09T22:26:09.039+0000] {logging_mixin.py:190} INFO - [2024-11-09T22:26:09.039+0000] {dagbag.py:588} INFO - Filling up the DagBag from /opt/airflow/dags/openbrewerydb.py
+[2024-11-09T22:26:09.043+0000] {logging_mixin.py:190} INFO - [2024-11-09T22:26:09.041+0000] {dagbag.py:387} ERROR - Failed to import: /opt/airflow/dags/openbrewerydb.py
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/models/dagbag.py", line 383, in parse
+    loader.exec_module(new_module)
+  File "<frozen importlib._bootstrap_external>", line 995, in exec_module
+  File "<frozen importlib._bootstrap>", line 488, in _call_with_frames_removed
+  File "/opt/airflow/dags/openbrewerydb.py", line 22, in <module>
+    spark_submit_task = SparkSubmitOperator(
+                        ^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/models/baseoperator.py", line 490, in apply_defaults
+    result = func(self, **kwargs, default_args=default_args)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/providers/apache/spark/operators/spark_submit.py", line 139, in __init__
+    super().__init__(**kwargs)
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/models/baseoperator.py", line 490, in apply_defaults
+    result = func(self, **kwargs, default_args=default_args)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/models/baseoperator.py", line 938, in __init__
+    raise AirflowException(
+airflow.exceptions.AirflowException: Invalid arguments were passed to SparkSubmitOperator (task_id: spark_submit_job). Invalid arguments were:
+**kwargs: {'master': 'spark://spark-master:7077'}
+[2024-11-09T22:26:09.044+0000] {processor.py:927} WARNING - No viable dags retrieved from /opt/airflow/dags/openbrewerydb.py
+[2024-11-09T22:26:09.055+0000] {processor.py:208} INFO - Processing /opt/airflow/dags/openbrewerydb.py took 0.023 seconds
+[2024-11-09T22:26:39.753+0000] {processor.py:186} INFO - Started process (PID=87704) to work on /opt/airflow/dags/openbrewerydb.py
+[2024-11-09T22:26:39.755+0000] {processor.py:914} INFO - Processing file /opt/airflow/dags/openbrewerydb.py for tasks to queue
+[2024-11-09T22:26:39.757+0000] {logging_mixin.py:190} INFO - [2024-11-09T22:26:39.757+0000] {dagbag.py:588} INFO - Filling up the DagBag from /opt/airflow/dags/openbrewerydb.py
+[2024-11-09T22:26:39.762+0000] {logging_mixin.py:190} INFO - [2024-11-09T22:26:39.760+0000] {dagbag.py:387} ERROR - Failed to import: /opt/airflow/dags/openbrewerydb.py
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/models/dagbag.py", line 383, in parse
+    loader.exec_module(new_module)
+  File "<frozen importlib._bootstrap_external>", line 995, in exec_module
+  File "<frozen importlib._bootstrap>", line 488, in _call_with_frames_removed
+  File "/opt/airflow/dags/openbrewerydb.py", line 22, in <module>
+    spark_submit_task = SparkSubmitOperator(
+                        ^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/models/baseoperator.py", line 490, in apply_defaults
+    result = func(self, **kwargs, default_args=default_args)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/providers/apache/spark/operators/spark_submit.py", line 139, in __init__
+    super().__init__(**kwargs)
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/models/baseoperator.py", line 490, in apply_defaults
+    result = func(self, **kwargs, default_args=default_args)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/models/baseoperator.py", line 938, in __init__
+    raise AirflowException(
+airflow.exceptions.AirflowException: Invalid arguments were passed to SparkSubmitOperator (task_id: spark_submit_job). Invalid arguments were:
+**kwargs: {'master': 'spark://spark-master:7077'}
+[2024-11-09T22:26:39.762+0000] {processor.py:927} WARNING - No viable dags retrieved from /opt/airflow/dags/openbrewerydb.py
+[2024-11-09T22:26:39.775+0000] {processor.py:208} INFO - Processing /opt/airflow/dags/openbrewerydb.py took 0.031 seconds
+[2024-11-09T22:27:10.123+0000] {processor.py:186} INFO - Started process (PID=87884) to work on /opt/airflow/dags/openbrewerydb.py
+[2024-11-09T22:27:10.124+0000] {processor.py:914} INFO - Processing file /opt/airflow/dags/openbrewerydb.py for tasks to queue
+[2024-11-09T22:27:10.128+0000] {logging_mixin.py:190} INFO - [2024-11-09T22:27:10.128+0000] {dagbag.py:588} INFO - Filling up the DagBag from /opt/airflow/dags/openbrewerydb.py
+[2024-11-09T22:27:10.137+0000] {logging_mixin.py:190} INFO - [2024-11-09T22:27:10.134+0000] {dagbag.py:387} ERROR - Failed to import: /opt/airflow/dags/openbrewerydb.py
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/models/dagbag.py", line 383, in parse
+    loader.exec_module(new_module)
+  File "<frozen importlib._bootstrap_external>", line 995, in exec_module
+  File "<frozen importlib._bootstrap>", line 488, in _call_with_frames_removed
+  File "/opt/airflow/dags/openbrewerydb.py", line 22, in <module>
+    spark_submit_task = SparkSubmitOperator(
+                        ^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/models/baseoperator.py", line 490, in apply_defaults
+    result = func(self, **kwargs, default_args=default_args)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/providers/apache/spark/operators/spark_submit.py", line 139, in __init__
+    super().__init__(**kwargs)
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/models/baseoperator.py", line 490, in apply_defaults
+    result = func(self, **kwargs, default_args=default_args)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/models/baseoperator.py", line 938, in __init__
+    raise AirflowException(
+airflow.exceptions.AirflowException: Invalid arguments were passed to SparkSubmitOperator (task_id: spark_submit_job). Invalid arguments were:
+**kwargs: {'master': 'spark://spark-master:7077'}
+[2024-11-09T22:27:10.138+0000] {processor.py:927} WARNING - No viable dags retrieved from /opt/airflow/dags/openbrewerydb.py
+[2024-11-09T22:27:10.171+0000] {processor.py:208} INFO - Processing /opt/airflow/dags/openbrewerydb.py took 0.055 seconds
+[2024-11-09T22:27:40.873+0000] {processor.py:186} INFO - Started process (PID=87958) to work on /opt/airflow/dags/openbrewerydb.py
+[2024-11-09T22:27:40.874+0000] {processor.py:914} INFO - Processing file /opt/airflow/dags/openbrewerydb.py for tasks to queue
+[2024-11-09T22:27:40.878+0000] {logging_mixin.py:190} INFO - [2024-11-09T22:27:40.877+0000] {dagbag.py:588} INFO - Filling up the DagBag from /opt/airflow/dags/openbrewerydb.py
+[2024-11-09T22:27:40.885+0000] {logging_mixin.py:190} INFO - [2024-11-09T22:27:40.881+0000] {dagbag.py:387} ERROR - Failed to import: /opt/airflow/dags/openbrewerydb.py
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/models/dagbag.py", line 383, in parse
+    loader.exec_module(new_module)
+  File "<frozen importlib._bootstrap_external>", line 995, in exec_module
+  File "<frozen importlib._bootstrap>", line 488, in _call_with_frames_removed
+  File "/opt/airflow/dags/openbrewerydb.py", line 22, in <module>
+    spark_submit_task = SparkSubmitOperator(
+                        ^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/models/baseoperator.py", line 490, in apply_defaults
+    result = func(self, **kwargs, default_args=default_args)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/providers/apache/spark/operators/spark_submit.py", line 139, in __init__
+    super().__init__(**kwargs)
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/models/baseoperator.py", line 490, in apply_defaults
+    result = func(self, **kwargs, default_args=default_args)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/models/baseoperator.py", line 938, in __init__
+    raise AirflowException(
+airflow.exceptions.AirflowException: Invalid arguments were passed to SparkSubmitOperator (task_id: spark_submit_job). Invalid arguments were:
+**kwargs: {'master': 'spark://spark-master:7077'}
+[2024-11-09T22:27:40.886+0000] {processor.py:927} WARNING - No viable dags retrieved from /opt/airflow/dags/openbrewerydb.py
+[2024-11-09T22:27:40.906+0000] {processor.py:208} INFO - Processing /opt/airflow/dags/openbrewerydb.py took 0.039 seconds
+[2024-11-09T22:27:41.920+0000] {processor.py:186} INFO - Started process (PID=87988) to work on /opt/airflow/dags/openbrewerydb.py
+[2024-11-09T22:27:41.921+0000] {processor.py:914} INFO - Processing file /opt/airflow/dags/openbrewerydb.py for tasks to queue
+[2024-11-09T22:27:41.923+0000] {logging_mixin.py:190} INFO - [2024-11-09T22:27:41.923+0000] {dagbag.py:588} INFO - Filling up the DagBag from /opt/airflow/dags/openbrewerydb.py
+[2024-11-09T22:27:41.928+0000] {logging_mixin.py:190} INFO - [2024-11-09T22:27:41.926+0000] {dagbag.py:387} ERROR - Failed to import: /opt/airflow/dags/openbrewerydb.py
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/models/dagbag.py", line 383, in parse
+    loader.exec_module(new_module)
+  File "<frozen importlib._bootstrap_external>", line 995, in exec_module
+  File "<frozen importlib._bootstrap>", line 488, in _call_with_frames_removed
+  File "/opt/airflow/dags/openbrewerydb.py", line 22, in <module>
+    bronze_spark_submit_task = SparkSubmitOperator(
+                               ^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/models/baseoperator.py", line 490, in apply_defaults
+    result = func(self, **kwargs, default_args=default_args)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/providers/apache/spark/operators/spark_submit.py", line 139, in __init__
+    super().__init__(**kwargs)
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/models/baseoperator.py", line 490, in apply_defaults
+    result = func(self, **kwargs, default_args=default_args)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/models/baseoperator.py", line 938, in __init__
+    raise AirflowException(
+airflow.exceptions.AirflowException: Invalid arguments were passed to SparkSubmitOperator (task_id: spark_submit_job). Invalid arguments were:
+**kwargs: {'master': 'spark://spark-master:7077'}
+[2024-11-09T22:27:41.928+0000] {processor.py:927} WARNING - No viable dags retrieved from /opt/airflow/dags/openbrewerydb.py
+[2024-11-09T22:27:41.944+0000] {processor.py:208} INFO - Processing /opt/airflow/dags/openbrewerydb.py took 0.030 seconds
+[2024-11-09T22:28:12.442+0000] {processor.py:186} INFO - Started process (PID=88083) to work on /opt/airflow/dags/openbrewerydb.py
+[2024-11-09T22:28:12.444+0000] {processor.py:914} INFO - Processing file /opt/airflow/dags/openbrewerydb.py for tasks to queue
+[2024-11-09T22:28:12.446+0000] {logging_mixin.py:190} INFO - [2024-11-09T22:28:12.445+0000] {dagbag.py:588} INFO - Filling up the DagBag from /opt/airflow/dags/openbrewerydb.py
+[2024-11-09T22:28:12.449+0000] {logging_mixin.py:190} INFO - [2024-11-09T22:28:12.447+0000] {dagbag.py:387} ERROR - Failed to import: /opt/airflow/dags/openbrewerydb.py
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/models/dagbag.py", line 383, in parse
+    loader.exec_module(new_module)
+  File "<frozen importlib._bootstrap_external>", line 995, in exec_module
+  File "<frozen importlib._bootstrap>", line 488, in _call_with_frames_removed
+  File "/opt/airflow/dags/openbrewerydb.py", line 22, in <module>
+    bronze_spark_submit_task = SparkSubmitOperator(
+                               ^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/models/baseoperator.py", line 490, in apply_defaults
+    result = func(self, **kwargs, default_args=default_args)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/providers/apache/spark/operators/spark_submit.py", line 139, in __init__
+    super().__init__(**kwargs)
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/models/baseoperator.py", line 490, in apply_defaults
+    result = func(self, **kwargs, default_args=default_args)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/models/baseoperator.py", line 938, in __init__
+    raise AirflowException(
+airflow.exceptions.AirflowException: Invalid arguments were passed to SparkSubmitOperator (task_id: spark_submit_job). Invalid arguments were:
+**kwargs: {'master': 'spark://spark-master:7077'}
+[2024-11-09T22:28:12.449+0000] {processor.py:927} WARNING - No viable dags retrieved from /opt/airflow/dags/openbrewerydb.py
+[2024-11-09T22:28:12.463+0000] {processor.py:208} INFO - Processing /opt/airflow/dags/openbrewerydb.py took 0.026 seconds
+[2024-11-09T22:28:17.521+0000] {processor.py:186} INFO - Started process (PID=88208) to work on /opt/airflow/dags/openbrewerydb.py
+[2024-11-09T22:28:17.521+0000] {processor.py:914} INFO - Processing file /opt/airflow/dags/openbrewerydb.py for tasks to queue
+[2024-11-09T22:28:17.524+0000] {logging_mixin.py:190} INFO - [2024-11-09T22:28:17.523+0000] {dagbag.py:588} INFO - Filling up the DagBag from /opt/airflow/dags/openbrewerydb.py
+[2024-11-09T22:28:17.530+0000] {logging_mixin.py:190} INFO - [2024-11-09T22:28:17.529+0000] {dagbag.py:387} ERROR - Failed to import: /opt/airflow/dags/openbrewerydb.py
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/models/dagbag.py", line 383, in parse
+    loader.exec_module(new_module)
+  File "<frozen importlib._bootstrap_external>", line 995, in exec_module
+  File "<frozen importlib._bootstrap>", line 488, in _call_with_frames_removed
+  File "/opt/airflow/dags/openbrewerydb.py", line 30, in <module>
+    spark_submit_tasks[layer] = SparkSubmitOperator(
+                                ^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/models/baseoperator.py", line 490, in apply_defaults
+    result = func(self, **kwargs, default_args=default_args)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/providers/apache/spark/operators/spark_submit.py", line 139, in __init__
+    super().__init__(**kwargs)
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/models/baseoperator.py", line 490, in apply_defaults
+    result = func(self, **kwargs, default_args=default_args)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/models/baseoperator.py", line 938, in __init__
+    raise AirflowException(
+airflow.exceptions.AirflowException: Invalid arguments were passed to SparkSubmitOperator (task_id: spark_submit_bronze_job). Invalid arguments were:
+**kwargs: {'master': 'spark://spark-master:7077'}
+[2024-11-09T22:28:17.531+0000] {processor.py:927} WARNING - No viable dags retrieved from /opt/airflow/dags/openbrewerydb.py
+[2024-11-09T22:28:17.544+0000] {processor.py:208} INFO - Processing /opt/airflow/dags/openbrewerydb.py took 0.029 seconds
+[2024-11-09T22:28:48.231+0000] {processor.py:186} INFO - Started process (PID=88266) to work on /opt/airflow/dags/openbrewerydb.py
+[2024-11-09T22:28:48.232+0000] {processor.py:914} INFO - Processing file /opt/airflow/dags/openbrewerydb.py for tasks to queue
+[2024-11-09T22:28:48.234+0000] {logging_mixin.py:190} INFO - [2024-11-09T22:28:48.233+0000] {dagbag.py:588} INFO - Filling up the DagBag from /opt/airflow/dags/openbrewerydb.py
+[2024-11-09T22:28:48.239+0000] {logging_mixin.py:190} INFO - [2024-11-09T22:28:48.236+0000] {dagbag.py:387} ERROR - Failed to import: /opt/airflow/dags/openbrewerydb.py
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/models/dagbag.py", line 383, in parse
+    loader.exec_module(new_module)
+  File "<frozen importlib._bootstrap_external>", line 995, in exec_module
+  File "<frozen importlib._bootstrap>", line 488, in _call_with_frames_removed
+  File "/opt/airflow/dags/openbrewerydb.py", line 30, in <module>
+    spark_submit_tasks[layer] = SparkSubmitOperator(
+                                ^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/models/baseoperator.py", line 490, in apply_defaults
+    result = func(self, **kwargs, default_args=default_args)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/providers/apache/spark/operators/spark_submit.py", line 139, in __init__
+    super().__init__(**kwargs)
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/models/baseoperator.py", line 490, in apply_defaults
+    result = func(self, **kwargs, default_args=default_args)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/models/baseoperator.py", line 938, in __init__
+    raise AirflowException(
+airflow.exceptions.AirflowException: Invalid arguments were passed to SparkSubmitOperator (task_id: spark_submit_bronze_job). Invalid arguments were:
+**kwargs: {'master': 'spark://spark-master:7077'}
+[2024-11-09T22:28:48.239+0000] {processor.py:927} WARNING - No viable dags retrieved from /opt/airflow/dags/openbrewerydb.py
+[2024-11-09T22:28:48.258+0000] {processor.py:208} INFO - Processing /opt/airflow/dags/openbrewerydb.py took 0.033 seconds
+[2024-11-09T22:29:18.351+0000] {processor.py:186} INFO - Started process (PID=88445) to work on /opt/airflow/dags/openbrewerydb.py
+[2024-11-09T22:29:18.352+0000] {processor.py:914} INFO - Processing file /opt/airflow/dags/openbrewerydb.py for tasks to queue
+[2024-11-09T22:29:18.354+0000] {logging_mixin.py:190} INFO - [2024-11-09T22:29:18.354+0000] {dagbag.py:588} INFO - Filling up the DagBag from /opt/airflow/dags/openbrewerydb.py
+[2024-11-09T22:29:18.360+0000] {logging_mixin.py:190} INFO - [2024-11-09T22:29:18.357+0000] {dagbag.py:387} ERROR - Failed to import: /opt/airflow/dags/openbrewerydb.py
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/models/dagbag.py", line 383, in parse
+    loader.exec_module(new_module)
+  File "<frozen importlib._bootstrap_external>", line 995, in exec_module
+  File "<frozen importlib._bootstrap>", line 488, in _call_with_frames_removed
+  File "/opt/airflow/dags/openbrewerydb.py", line 30, in <module>
+    spark_submit_tasks[layer] = SparkSubmitOperator(
+                                ^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/models/baseoperator.py", line 490, in apply_defaults
+    result = func(self, **kwargs, default_args=default_args)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/providers/apache/spark/operators/spark_submit.py", line 139, in __init__
+    super().__init__(**kwargs)
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/models/baseoperator.py", line 490, in apply_defaults
+    result = func(self, **kwargs, default_args=default_args)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/models/baseoperator.py", line 938, in __init__
+    raise AirflowException(
+airflow.exceptions.AirflowException: Invalid arguments were passed to SparkSubmitOperator (task_id: spark_submit_bronze_job). Invalid arguments were:
+**kwargs: {'master': 'spark://spark-master:7077'}
+[2024-11-09T22:29:18.360+0000] {processor.py:927} WARNING - No viable dags retrieved from /opt/airflow/dags/openbrewerydb.py
+[2024-11-09T22:29:18.374+0000] {processor.py:208} INFO - Processing /opt/airflow/dags/openbrewerydb.py took 0.033 seconds
+[2024-11-09T22:29:48.672+0000] {processor.py:186} INFO - Started process (PID=88626) to work on /opt/airflow/dags/openbrewerydb.py
+[2024-11-09T22:29:48.673+0000] {processor.py:914} INFO - Processing file /opt/airflow/dags/openbrewerydb.py for tasks to queue
+[2024-11-09T22:29:48.676+0000] {logging_mixin.py:190} INFO - [2024-11-09T22:29:48.675+0000] {dagbag.py:588} INFO - Filling up the DagBag from /opt/airflow/dags/openbrewerydb.py
+[2024-11-09T22:29:48.679+0000] {logging_mixin.py:190} INFO - [2024-11-09T22:29:48.678+0000] {dagbag.py:387} ERROR - Failed to import: /opt/airflow/dags/openbrewerydb.py
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/models/dagbag.py", line 383, in parse
+    loader.exec_module(new_module)
+  File "<frozen importlib._bootstrap_external>", line 995, in exec_module
+  File "<frozen importlib._bootstrap>", line 488, in _call_with_frames_removed
+  File "/opt/airflow/dags/openbrewerydb.py", line 30, in <module>
+    spark_submit_tasks[layer] = SparkSubmitOperator(
+                                ^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/models/baseoperator.py", line 490, in apply_defaults
+    result = func(self, **kwargs, default_args=default_args)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/providers/apache/spark/operators/spark_submit.py", line 139, in __init__
+    super().__init__(**kwargs)
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/models/baseoperator.py", line 490, in apply_defaults
+    result = func(self, **kwargs, default_args=default_args)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/models/baseoperator.py", line 938, in __init__
+    raise AirflowException(
+airflow.exceptions.AirflowException: Invalid arguments were passed to SparkSubmitOperator (task_id: spark_submit_bronze_job). Invalid arguments were:
+**kwargs: {'master': 'spark://spark-master:7077'}
+[2024-11-09T22:29:48.680+0000] {processor.py:927} WARNING - No viable dags retrieved from /opt/airflow/dags/openbrewerydb.py
+[2024-11-09T22:29:48.692+0000] {processor.py:208} INFO - Processing /opt/airflow/dags/openbrewerydb.py took 0.025 seconds
+[2024-11-09T22:30:19.031+0000] {processor.py:186} INFO - Started process (PID=88806) to work on /opt/airflow/dags/openbrewerydb.py
+[2024-11-09T22:30:19.062+0000] {processor.py:914} INFO - Processing file /opt/airflow/dags/openbrewerydb.py for tasks to queue
+[2024-11-09T22:30:19.064+0000] {logging_mixin.py:190} INFO - [2024-11-09T22:30:19.064+0000] {dagbag.py:588} INFO - Filling up the DagBag from /opt/airflow/dags/openbrewerydb.py
+[2024-11-09T22:30:19.067+0000] {logging_mixin.py:190} INFO - [2024-11-09T22:30:19.066+0000] {dagbag.py:387} ERROR - Failed to import: /opt/airflow/dags/openbrewerydb.py
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/models/dagbag.py", line 383, in parse
+    loader.exec_module(new_module)
+  File "<frozen importlib._bootstrap_external>", line 995, in exec_module
+  File "<frozen importlib._bootstrap>", line 488, in _call_with_frames_removed
+  File "/opt/airflow/dags/openbrewerydb.py", line 30, in <module>
+    spark_submit_tasks[layer] = SparkSubmitOperator(
+                                ^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/models/baseoperator.py", line 490, in apply_defaults
+    result = func(self, **kwargs, default_args=default_args)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/providers/apache/spark/operators/spark_submit.py", line 139, in __init__
+    super().__init__(**kwargs)
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/models/baseoperator.py", line 490, in apply_defaults
+    result = func(self, **kwargs, default_args=default_args)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/models/baseoperator.py", line 938, in __init__
+    raise AirflowException(
+airflow.exceptions.AirflowException: Invalid arguments were passed to SparkSubmitOperator (task_id: spark_submit_bronze_job). Invalid arguments were:
+**kwargs: {'master': 'spark://spark-master:7077'}
+[2024-11-09T22:30:19.068+0000] {processor.py:927} WARNING - No viable dags retrieved from /opt/airflow/dags/openbrewerydb.py
+[2024-11-09T22:30:19.106+0000] {processor.py:208} INFO - Processing /opt/airflow/dags/openbrewerydb.py took 0.079 seconds
+[2024-11-09T22:30:49.703+0000] {processor.py:186} INFO - Started process (PID=88985) to work on /opt/airflow/dags/openbrewerydb.py
+[2024-11-09T22:30:49.704+0000] {processor.py:914} INFO - Processing file /opt/airflow/dags/openbrewerydb.py for tasks to queue
+[2024-11-09T22:30:49.706+0000] {logging_mixin.py:190} INFO - [2024-11-09T22:30:49.705+0000] {dagbag.py:588} INFO - Filling up the DagBag from /opt/airflow/dags/openbrewerydb.py
+[2024-11-09T22:30:49.710+0000] {logging_mixin.py:190} INFO - [2024-11-09T22:30:49.708+0000] {dagbag.py:387} ERROR - Failed to import: /opt/airflow/dags/openbrewerydb.py
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/models/dagbag.py", line 383, in parse
+    loader.exec_module(new_module)
+  File "<frozen importlib._bootstrap_external>", line 995, in exec_module
+  File "<frozen importlib._bootstrap>", line 488, in _call_with_frames_removed
+  File "/opt/airflow/dags/openbrewerydb.py", line 30, in <module>
+    spark_submit_tasks[layer] = SparkSubmitOperator(
+                                ^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/models/baseoperator.py", line 490, in apply_defaults
+    result = func(self, **kwargs, default_args=default_args)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/providers/apache/spark/operators/spark_submit.py", line 139, in __init__
+    super().__init__(**kwargs)
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/models/baseoperator.py", line 490, in apply_defaults
+    result = func(self, **kwargs, default_args=default_args)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/models/baseoperator.py", line 938, in __init__
+    raise AirflowException(
+airflow.exceptions.AirflowException: Invalid arguments were passed to SparkSubmitOperator (task_id: spark_submit_bronze_job). Invalid arguments were:
+**kwargs: {'master': 'spark://spark-master:7077'}
+[2024-11-09T22:30:49.711+0000] {processor.py:927} WARNING - No viable dags retrieved from /opt/airflow/dags/openbrewerydb.py
+[2024-11-09T22:30:49.731+0000] {processor.py:208} INFO - Processing /opt/airflow/dags/openbrewerydb.py took 0.033 seconds
+[2024-11-09T22:31:20.220+0000] {processor.py:186} INFO - Started process (PID=89166) to work on /opt/airflow/dags/openbrewerydb.py
+[2024-11-09T22:31:20.221+0000] {processor.py:914} INFO - Processing file /opt/airflow/dags/openbrewerydb.py for tasks to queue
+[2024-11-09T22:31:20.223+0000] {logging_mixin.py:190} INFO - [2024-11-09T22:31:20.222+0000] {dagbag.py:588} INFO - Filling up the DagBag from /opt/airflow/dags/openbrewerydb.py
+[2024-11-09T22:31:20.228+0000] {logging_mixin.py:190} INFO - [2024-11-09T22:31:20.225+0000] {dagbag.py:387} ERROR - Failed to import: /opt/airflow/dags/openbrewerydb.py
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/models/dagbag.py", line 383, in parse
+    loader.exec_module(new_module)
+  File "<frozen importlib._bootstrap_external>", line 995, in exec_module
+  File "<frozen importlib._bootstrap>", line 488, in _call_with_frames_removed
+  File "/opt/airflow/dags/openbrewerydb.py", line 30, in <module>
+    spark_submit_tasks[layer] = SparkSubmitOperator(
+                                ^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/models/baseoperator.py", line 490, in apply_defaults
+    result = func(self, **kwargs, default_args=default_args)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/providers/apache/spark/operators/spark_submit.py", line 139, in __init__
+    super().__init__(**kwargs)
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/models/baseoperator.py", line 490, in apply_defaults
+    result = func(self, **kwargs, default_args=default_args)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/models/baseoperator.py", line 938, in __init__
+    raise AirflowException(
+airflow.exceptions.AirflowException: Invalid arguments were passed to SparkSubmitOperator (task_id: spark_submit_bronze_job). Invalid arguments were:
+**kwargs: {'master': 'spark://spark-master:7077'}
+[2024-11-09T22:31:20.228+0000] {processor.py:927} WARNING - No viable dags retrieved from /opt/airflow/dags/openbrewerydb.py
+[2024-11-09T22:31:20.250+0000] {processor.py:208} INFO - Processing /opt/airflow/dags/openbrewerydb.py took 0.037 seconds
+[2024-11-09T22:31:43.704+0000] {processor.py:186} INFO - Started process (PID=89181) to work on /opt/airflow/dags/openbrewerydb.py
+[2024-11-09T22:31:43.705+0000] {processor.py:914} INFO - Processing file /opt/airflow/dags/openbrewerydb.py for tasks to queue
+[2024-11-09T22:31:43.708+0000] {logging_mixin.py:190} INFO - [2024-11-09T22:31:43.707+0000] {dagbag.py:588} INFO - Filling up the DagBag from /opt/airflow/dags/openbrewerydb.py
+[2024-11-09T22:31:43.714+0000] {logging_mixin.py:190} INFO - [2024-11-09T22:31:43.712+0000] {dagbag.py:387} ERROR - Failed to import: /opt/airflow/dags/openbrewerydb.py
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/models/dagbag.py", line 383, in parse
+    loader.exec_module(new_module)
+  File "<frozen importlib._bootstrap_external>", line 995, in exec_module
+  File "<frozen importlib._bootstrap>", line 488, in _call_with_frames_removed
+  File "/opt/airflow/dags/openbrewerydb.py", line 30, in <module>
+    spark_submit_tasks[layer] = SparkSubmitOperator(
+                                ^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/models/baseoperator.py", line 490, in apply_defaults
+    result = func(self, **kwargs, default_args=default_args)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/providers/apache/spark/operators/spark_submit.py", line 139, in __init__
+    super().__init__(**kwargs)
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/models/baseoperator.py", line 490, in apply_defaults
+    result = func(self, **kwargs, default_args=default_args)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/models/baseoperator.py", line 938, in __init__
+    raise AirflowException(
+airflow.exceptions.AirflowException: Invalid arguments were passed to SparkSubmitOperator (task_id: spark_submit_bronze_job). Invalid arguments were:
+**kwargs: {'master': 'spark://spark-master:7077'}
+[2024-11-09T22:31:43.715+0000] {processor.py:927} WARNING - No viable dags retrieved from /opt/airflow/dags/openbrewerydb.py
+[2024-11-09T22:31:43.729+0000] {processor.py:208} INFO - Processing /opt/airflow/dags/openbrewerydb.py took 0.031 seconds
+[2024-11-09T22:32:13.955+0000] {processor.py:186} INFO - Started process (PID=89362) to work on /opt/airflow/dags/openbrewerydb.py
+[2024-11-09T22:32:13.956+0000] {processor.py:914} INFO - Processing file /opt/airflow/dags/openbrewerydb.py for tasks to queue
+[2024-11-09T22:32:13.957+0000] {logging_mixin.py:190} INFO - [2024-11-09T22:32:13.957+0000] {dagbag.py:588} INFO - Filling up the DagBag from /opt/airflow/dags/openbrewerydb.py
+[2024-11-09T22:32:13.961+0000] {logging_mixin.py:190} INFO - [2024-11-09T22:32:13.959+0000] {dagbag.py:387} ERROR - Failed to import: /opt/airflow/dags/openbrewerydb.py
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/models/dagbag.py", line 383, in parse
+    loader.exec_module(new_module)
+  File "<frozen importlib._bootstrap_external>", line 995, in exec_module
+  File "<frozen importlib._bootstrap>", line 488, in _call_with_frames_removed
+  File "/opt/airflow/dags/openbrewerydb.py", line 30, in <module>
+    spark_submit_tasks[layer] = SparkSubmitOperator(
+                                ^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/models/baseoperator.py", line 490, in apply_defaults
+    result = func(self, **kwargs, default_args=default_args)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/providers/apache/spark/operators/spark_submit.py", line 139, in __init__
+    super().__init__(**kwargs)
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/models/baseoperator.py", line 490, in apply_defaults
+    result = func(self, **kwargs, default_args=default_args)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/models/baseoperator.py", line 938, in __init__
+    raise AirflowException(
+airflow.exceptions.AirflowException: Invalid arguments were passed to SparkSubmitOperator (task_id: spark_submit_bronze_job). Invalid arguments were:
+**kwargs: {'master': 'spark://spark-master:7077'}
+[2024-11-09T22:32:13.961+0000] {processor.py:927} WARNING - No viable dags retrieved from /opt/airflow/dags/openbrewerydb.py
+[2024-11-09T22:32:13.977+0000] {processor.py:208} INFO - Processing /opt/airflow/dags/openbrewerydb.py took 0.026 seconds
+[2024-11-09T22:32:44.695+0000] {processor.py:186} INFO - Started process (PID=89544) to work on /opt/airflow/dags/openbrewerydb.py
+[2024-11-09T22:32:44.696+0000] {processor.py:914} INFO - Processing file /opt/airflow/dags/openbrewerydb.py for tasks to queue
+[2024-11-09T22:32:44.698+0000] {logging_mixin.py:190} INFO - [2024-11-09T22:32:44.697+0000] {dagbag.py:588} INFO - Filling up the DagBag from /opt/airflow/dags/openbrewerydb.py
+[2024-11-09T22:32:44.701+0000] {logging_mixin.py:190} INFO - [2024-11-09T22:32:44.699+0000] {dagbag.py:387} ERROR - Failed to import: /opt/airflow/dags/openbrewerydb.py
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/models/dagbag.py", line 383, in parse
+    loader.exec_module(new_module)
+  File "<frozen importlib._bootstrap_external>", line 995, in exec_module
+  File "<frozen importlib._bootstrap>", line 488, in _call_with_frames_removed
+  File "/opt/airflow/dags/openbrewerydb.py", line 30, in <module>
+    spark_submit_tasks[layer] = SparkSubmitOperator(
+                                ^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/models/baseoperator.py", line 490, in apply_defaults
+    result = func(self, **kwargs, default_args=default_args)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/providers/apache/spark/operators/spark_submit.py", line 139, in __init__
+    super().__init__(**kwargs)
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/models/baseoperator.py", line 490, in apply_defaults
+    result = func(self, **kwargs, default_args=default_args)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/models/baseoperator.py", line 938, in __init__
+    raise AirflowException(
+airflow.exceptions.AirflowException: Invalid arguments were passed to SparkSubmitOperator (task_id: spark_submit_bronze_job). Invalid arguments were:
+**kwargs: {'master': 'spark://spark-master:7077'}
+[2024-11-09T22:32:44.702+0000] {processor.py:927} WARNING - No viable dags retrieved from /opt/airflow/dags/openbrewerydb.py
+[2024-11-09T22:32:44.714+0000] {processor.py:208} INFO - Processing /opt/airflow/dags/openbrewerydb.py took 0.025 seconds
+[2024-11-09T22:33:15.276+0000] {processor.py:186} INFO - Started process (PID=89725) to work on /opt/airflow/dags/openbrewerydb.py
+[2024-11-09T22:33:15.277+0000] {processor.py:914} INFO - Processing file /opt/airflow/dags/openbrewerydb.py for tasks to queue
+[2024-11-09T22:33:15.279+0000] {logging_mixin.py:190} INFO - [2024-11-09T22:33:15.278+0000] {dagbag.py:588} INFO - Filling up the DagBag from /opt/airflow/dags/openbrewerydb.py
+[2024-11-09T22:33:15.283+0000] {logging_mixin.py:190} INFO - [2024-11-09T22:33:15.281+0000] {dagbag.py:387} ERROR - Failed to import: /opt/airflow/dags/openbrewerydb.py
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/models/dagbag.py", line 383, in parse
+    loader.exec_module(new_module)
+  File "<frozen importlib._bootstrap_external>", line 995, in exec_module
+  File "<frozen importlib._bootstrap>", line 488, in _call_with_frames_removed
+  File "/opt/airflow/dags/openbrewerydb.py", line 30, in <module>
+    spark_submit_tasks[layer] = SparkSubmitOperator(
+                                ^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/models/baseoperator.py", line 490, in apply_defaults
+    result = func(self, **kwargs, default_args=default_args)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/providers/apache/spark/operators/spark_submit.py", line 139, in __init__
+    super().__init__(**kwargs)
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/models/baseoperator.py", line 490, in apply_defaults
+    result = func(self, **kwargs, default_args=default_args)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/models/baseoperator.py", line 938, in __init__
+    raise AirflowException(
+airflow.exceptions.AirflowException: Invalid arguments were passed to SparkSubmitOperator (task_id: spark_submit_bronze_job). Invalid arguments were:
+**kwargs: {'master': 'spark://spark-master:7077'}
+[2024-11-09T22:33:15.283+0000] {processor.py:927} WARNING - No viable dags retrieved from /opt/airflow/dags/openbrewerydb.py
+[2024-11-09T22:33:15.299+0000] {processor.py:208} INFO - Processing /opt/airflow/dags/openbrewerydb.py took 0.028 seconds
