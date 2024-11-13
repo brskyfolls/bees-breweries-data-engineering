@@ -49,17 +49,17 @@ ENV AIRFLOW__EMAIL__EMAIL_BACKEND=airflow.utils.email.send_email_smtp \
     EMAIL_TO_SEND_ALERT=reciever_email
 ```
 
-### 3. Docker Compose
+### 3. Set Permissions
+Ensure the necessary permissions are set for the directory:
+
+```
+sudo chmod -R 7777 * 
+```
+
+### 4. Docker Compose
 
 ```
 docker-compose up --build -d
-```
-
-### 4. Set Permissions
-Ensure the necessary permissions are set for the dags/ directory:
-
-```
-sudo chmod -R 7777 dags/* 
 ```
 
 ### 5. Airflow Web Interface
