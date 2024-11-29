@@ -15,22 +15,22 @@ ENV JAVA_HOME=/usr/lib/jvm/java-17-openjdk-amd64
 ENV PATH="${JAVA_HOME}/bin:${PATH}"
 
 # Here you can customize the access and containers to send to Azure
-ENV CONTAINER_BRONZE=bronze-inbev-test \
-    CONTAINER_SILVER=silver-inbev-test \
-    CONTAINER_GOLD=gold-inbev-test \
-    AZURE_ACCOUNT_NAME=blobinbevtestbr \
-    AZURE_STORAGE_ACCOUNT_KEY=S5Tfc1aNUgfAshhi0H9dXx3EPGRdcquLbhPjonlrJ93NullOdkFl9C+Xt7tBDEcQK54/UzC51sjX+AStgv88ZA==
+ENV CONTAINER_BRONZE= \
+    CONTAINER_SILVER= \
+    CONTAINER_GOLD= \
+    AZURE_ACCOUNT_NAME= \
+    AZURE_STORAGE_ACCOUNT_KEY=
 
 # Set environment variables for SMTP and alert receptor email
 ENV AIRFLOW__EMAIL__EMAIL_BACKEND=airflow.utils.email.send_email_smtp \
-    AIRFLOW__SMTP__SMTP_HOST=smtp.gmail.com \
+    AIRFLOW__SMTP__SMTP_HOST= \
     AIRFLOW__SMTP__START_TLS=False \
     AIRFLOW__SMTP__SMTP_SSL=False \
-    AIRFLOW__SMTP__SMTP_USER=rodrigoemailalert@gmail.com \
-    AIRFLOW__SMTP__SMTP_PASSWORD="svys ihpy qzvr ovkm" \
+    AIRFLOW__SMTP__SMTP_USER= \
+    AIRFLOW__SMTP__SMTP_PASSWORD= \
     AIRFLOW__SMTP__SMTP_PORT=587 \
-    AIRFLOW__SMTP__SMTP_MAIL_FROM=rodrigoemailalert@gmail.com\
-    EMAIL_TO_SEND_ALERT=brskyfolls@gmail.com 
+    AIRFLOW__SMTP__SMTP_MAIL_FROM=\
+    EMAIL_TO_SEND_ALERT= 
 
 # Switch back to the airflow user for further installations
 USER airflow
